@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Admin - Exclusive</title>
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous">
+    <!-- simple line   -->
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.4/css/simple-line-icons.min.css' />
+    <!--ionicon link-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+    <!-- Our files -->
+    <link rel="stylesheet" href="/assets/admin/css/progress.css">
+    <link rel="stylesheet" href="/assets/admin/css/style.css">
+
+    <script src="data/products.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <header>
+        <span>ADMIN</span>
+    </header>
+
+    <!-- Menu -->
+    <aside class="sidebar">
+        <ul class="nav">
+            <li class="nav-title">MENU</li>
+            <li class="nav-item"><a class="nav-link active"><i class="fa fa-home"></i> Homepage</a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fa-solid fa-boxes-stacked"></i> Product</a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fa fa-file-text-o"></i> Order</a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fa-solid fa-address-card"></i> User</a></li>
+            <li class="nav-item">
+                <hr>
+            </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link" onclick="logOutAdmin(); return true;">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    LOGOUT
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Khung hiển thị chính -->
+    <div class="main">
+        <div class="home">
+            <div class="canvasContainer">
+                <canvas id="myChart1"></canvas>
+            </div>
+
+            <div class="canvasContainer">
+                <canvas id="myChart2"></canvas>
+            </div>
+
+            <div class="canvasContainer">
+                <canvas id="myChart3"></canvas>
+            </div>
+
+            <div class="canvasContainer">
+                <canvas id="myChart4"></canvas>
+            </div>
+        </div>
+
+        <!-- Product -->
+        <div class="sanpham">
+            <table class="table-header">
+                <tr>
+                    <!-- Theo độ rộng của table content -->
+                    <th title="Sort" style="width: 5%" onclick="sortProductsTable('stt')">No. <i class="fa fa-sort"></i>
+                    </th>
+                    <th title="Sort" style="width: 10%" onclick="sortProductsTable('masp')">Code <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 40%" onclick="sortProductsTable('ten')">Name <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 15%" onclick="sortProductsTable('gia')">Price <i
+                            class="fa fa-sort"></i></th>
+                    <th style="width: 15%">Action</th>
+                </tr>
+            </table>
+
+            <div class="table-content">
+            </div>
+
+            <div class="table-footer">
+                <select name="kieuTimSanPham">
+                    <option value="ma">Search by ID </option>
+                    <option value="ten">Search by Name </option>
+                </select>
+                <input type="text" placeholder="Search..." onkeyup="timKiemSanPham(this)">
+                <button
+                    onclick="document.getElementById('khungThemSanPham').style.transform = 'scale(1)'; autoMaProduct()">
+                    <i class="fa fa-plus-square"></i>
+                    Add Products
+                </button>
+            </div>
+
+            <div id="khungThemSanPham" class="overlay">
+                <span class="close" onclick="this.parentElement.style.transform = 'scale(0)';">&times;</span>
+                <table class="overlayTable table-outline table-content table-header">
+                    <tr>
+                        <th colspan="2">Add Product</th>
+                    </tr>
+                    <tr>
+                        <td>Product Code:</td>
+                        <td><input type="text" id="maspThem"></td>
+                    </tr>
+                    <tr>
+                        <td>Name Products:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>Image:</td>
+                        <td>
+                            <img class="hinhDaiDien" id="anhDaiDienProductThem" src="">
+                            <input type="file" accept="image/*"
+                                onchange="capNhatAnhSanPham(this.files, 'anhDaiDienProductThem')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="table-footer"> <button onclick="addProduct()">ADD</button> </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="khungSuaSanPham" class="overlay"></div>
+        </div>
+
+
+        <!-- Order -->
+        <div class="donhang">
+            <table class="table-header">
+                <tr>
+                    <!-- Theo độ rộng của table content -->
+                    <th title="Sort" style="width: 5%" onclick="sortOrderTable('stt')">No. <i class="fa fa-sort"></i>
+                    </th>
+                    <th title="Sort" style="width: 13%" onclick="sortOrderTable('madon')">Orders Code <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 7%" onclick="sortOrderTable('khach')">User <i class="fa fa-sort"></i>
+                    </th>
+                    <th title="Sort" style="width: 20%" onclick="sortOrderTable('sanpham')">Product <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 15%" onclick="sortOrderTable('total')">Total <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 10%" onclick="sortOrderTable('ngaygio')">Date <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 10%" onclick="sortOrderTable('trangthai')">Status <i
+                            class="fa fa-sort"></i></th>
+                    <th style="width: 10%">Action</th>
+                </tr>
+            </table>
+
+            <div class="table-content">
+            </div>
+
+            <div class="table-footer">
+                <div class="timTheoNgay">
+                    From: <input type="date" id="fromDate">
+                    To: <input type="date" id="toDate">
+
+                    <button onclick="locOrderTheoKhoangNgay()"><i class="fa fa-search"></i> Search</button>
+                </div>
+
+                <select name="kieuTimOrder">
+                    <option value="id">Search by ID</option>
+                    <option value="khachhang">Search by Name User</option>
+                    <option value="trangThai">Search by Status</option>
+                </select>
+                <input type="text" placeholder="Search..." onkeyup="timKiemDonHang(this)">
+            </div>
+
+        </div>
+
+
+        <!-- User -->
+        <div class="khachhang">
+            <table class="table-header">
+                <tr>
+                    <!-- Theo độ rộng của table content -->
+                    <th title="Sort" style="width: 5%" onclick="sortKhachHangTable('stt')">No <i class="fa fa-sort"></i>
+                    </th>
+                    <th title="Sort" style="width: 20%" onclick="sortKhachHangTable('email')">Email <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 20%" onclick="sortKhachHangTable('account')">Account <i
+                            class="fa fa-sort"></i></th>
+                    <th title="Sort" style="width: 10%" onclick="sortKhachHangTable('password')">Password <i
+                            class="fa fa-sort"></i></th>
+                    <th style="width: 10%">Status</th>
+                </tr>
+            </table>
+
+            <div class="table-content">
+            </div>
+
+            <div class="table-footer">
+                <select name="kieuTimKhachHang">
+                    <option value="ten">Search by Full Name</option>
+                    <option value="email">Search by Email</option>
+                    <option value="account">Search by Account</option>
+                </select>
+                <input type="text" placeholder="Search..." onkeyup="timKiemUser(this)">
+                <button onclick="openThemUser()"><i class="fa fa-plus-square"></i> Add Users</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
