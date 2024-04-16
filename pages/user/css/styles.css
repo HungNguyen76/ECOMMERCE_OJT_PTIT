@@ -1082,11 +1082,11 @@ button.card_btn:hover {
 }
 
 /* Cart Section */
-.cart-section {
+/* .cart-section {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
+} */
 
 .cart-items {
   display: flex;

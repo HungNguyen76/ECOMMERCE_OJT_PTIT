@@ -5,29 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Comments</title>
   <style>
-    /* General Styles */
-/* body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 20px;
-}
-#comment-form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 70%; 
-  margin-left: 0; 
-  margin-right: auto;
-  text-align: center;
-}
-
-.comment-container {
-  width: 70%; 
-} */
-
-/* Apply Flexbox to the body to center all content */
 body {
   display: flex;
   flex-direction: column;
@@ -202,19 +179,32 @@ body {
   <div id="comment-container" class="comment-container"></div>
 
   <script>
-    document.getElementById('comment-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value;
-      const comment = document.getElementById('comment').value;
-      const commentContainer = document.getElementById('comment-container');
-      const newComment = document.createElement('div');
-      newComment.classList.add('comment');
-      newComment.innerHTML = `<strong>${name}</strong>: ${comment}`;
-      commentContainer.appendChild(newComment);
-      // Clear the form fields
-      document.getElementById('name').value = '';
-      document.getElementById('comment').value = '';
-    });
+     document.getElementById('comment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+        const commentContainer = document.getElementById('comment-container');
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+
+        // Add a delete button to each comment
+        newComment.innerHTML = `
+          <strong>${name}</strong>: ${comment}
+          <button onclick="deleteComment(this)">Delete</button>
+        `;
+
+        commentContainer.appendChild(newComment);
+
+        // Clear the form fields
+        document.getElementById('name').value = '';
+        document.getElementById('comment').value = '';
+      });
+
+      // Function to delete a comment
+      function deleteComment(button) {
+        // Remove the comment div
+        button.parentElement.remove();
+      }
   </script>
 </body>
 </html>
