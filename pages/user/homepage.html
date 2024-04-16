@@ -33,7 +33,83 @@
       justify-content: center;
       margin-top: 10px;
       margin-right: 20px;
-      
+
+    }
+
+    .nav_link,
+    .nav_logo,
+    .footer_logo {
+      text-decoration: none;
+    }
+
+    #comment-form {
+      max-width: 840px;
+      /* Đặt chiều rộng tối đa của form comment */
+      margin: 0 auto;
+      /* Đưa form comment vào giữa trang */
+      padding: 20px;
+      /* Tạo khoảng cách giữa các phần tử trong form */
+      border: 1px solid #ccc;
+      /* Tạo viền xung quanh form */
+      border-radius: 8px;
+      /* Làm cong viền của form */
+      background-color: #f9f9f9;
+      /* Màu nền của form */
+    }
+
+    #comment-form input,
+    #comment-form textarea,
+    #comment-form button {
+      width: 100%;
+      /* Đặt chiều rộng của input, textarea, và button là 100% */
+      margin-bottom: 10px;
+      /* Tạo khoảng cách giữa các phần tử */
+    }
+
+    #comment-form button {
+      background-color: #007bff;
+      /* Màu nền của nút Submit Comment */
+      color: #fff;
+      /* Màu chữ của nút */
+      border: gray;
+      /* Loại bỏ viền của nút */
+      padding: 10px;
+      /* Tạo khoảng cách giữa viền và nội dung của nút */
+      cursor: pointer;
+      /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
+    }
+
+    #comment-container {
+      max-width: 600px;
+      /* Đặt chiều rộng tối đa của container chứa các comment */
+      margin: 20px auto;
+      /* Đưa container vào giữa trang */
+    }
+
+    .comment {
+      margin-bottom: 10px;
+      /* Tạo khoảng cách giữa các comment */
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-top: 15px;
+      border-left: 3px solid #0056b3;
+      border-radius: 4px;
+    }
+
+    .comment button {
+      background-color: #dc3545;
+      /* Màu nền của nút Delete */
+      color: #fff;
+      /* Màu chữ của nút */
+      border: none;
+      /* Loại bỏ viền của nút */
+      padding: 5px 10px;
+      /* Tạo khoảng cách giữa viền và nội dung của nút */
+      cursor: pointer;
+      /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
+    }
+    .text {
+      font-size: 14px;
     }
   </style>
 </head>
@@ -43,9 +119,12 @@
     <nav class="nav" data-sr-id="2"
       style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
       <div class="container nav_container">
-        <a href="./index.html" class="nav_logo">Pro PC</a>
+        <a class="navbar-brand" href="/pages/user/homepage.html">
+          <img src="/pages/user/image/logo pc pro.png" alt="" style="width: 80px; height: 50px">
+        </a>
+        <a href="/pages/user/homepage.html" class="nav_logo">Pro PC</a>
         <ul class="nav_list">
-          <li class="nav_item"><a href="./index.html" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="/pages/user/homepage.html" class="nav_link">Home</a></li>
           <li class="nav_item"><a href="./products.html" class="nav_link">Our Products</a></li>
           <li class="nav_item"><a href="/pages/user/FormContenct.html" class="nav_link">Contact Us</a></li>
 
@@ -195,8 +274,8 @@
         <p>1.759.000 VNĐ</p>
         <a href="#" class="btn btn-primary">Mua</a>
         <iỏ href="#" class="btn btn-primary">Giỏ hàng</a>
-        <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
-        
+          <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+
       </div>
     </div>
 
@@ -274,8 +353,24 @@
     </div>
 
   </div>
+
+
+  <form id="comment-form">
+    <input type="text" id="name" placeholder="Your name" required>
+    <br>
+    <textarea id="comment" placeholder="Your comment" required></textarea>
+    <br>
+    <button type="submit">Submit Comment</button>
+  </form>
+
+  <!-- Container for displaying comments -->
+  <div id="comment-container" class="comment-container"></div>
+
+
+
   <footer>
-    <section class="section" data-sr-id="10" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+    <section class="section" data-sr-id="10"
+      style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
       <div class="container services_container">
         <div class="service">
           <img src="/pages/user/image/1.jpg" alt="" class="service_img">
@@ -291,12 +386,16 @@
         </div>
       </div>
     </section>
-  
-    <footer class="footer" data-sr-id="11" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+
+    <footer class="footer" data-sr-id="11"
+      style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
       <div class="container footer_container">
         <div class="footer_item">
-          <a href="./index.html" class="footer_logo">PC Pro</a>
-          <div class="footer_p">''
+          <a href="/pages/user/homepage.html" class="footer_logo">PC Pro</a>
+          <p class="text">At PC Pro we guarantee IT and network security.<br>
+          We supply old and new products with high quality <br>
+          </p>
+          <div class="footer_p">
           </div>
         </div>
         <div class="footer_item">
@@ -306,6 +405,11 @@
             <li class="li footer_list_item">email@gmail.com</li>
             <li class="li footer_list_item">+46 123 456 78</li>
             <li class="li footer_list_item">+46 72 345 67</li>
+            <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
           </ul>
         </div>
         <div class="footer_item">
@@ -324,25 +428,67 @@
             <li class="li footer_list_item">Terms of use</li>
             <li class="li footer_list_item">FAQ's</li>
             <li class="li footer_list_item">Contact</li>
+            
           </ul>
         </div>
       </div>
-  </footer>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="/pages/user/js/datapro.js"></script>
-  <script>
-    var myCarousel = document.querySelector('#carouselExampleIndicators');
-    var carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 2000, // Thời gian chuyển đổi giữa các slide (miliseconds)
-      wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="/pages/user/js/datapro.js"></script>
+    <script>
+      var myCarousel = document.querySelector('#carouselExampleIndicators');
+      var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 2000, // Thời gian chuyển đổi giữa các slide (miliseconds)
+        wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
+      });
+
+
+      document.getElementById('comment-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const comment = document.getElementById('comment').value;
+      const commentContainer = document.getElementById('comment-container');
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment');
+
+      // Add a delete and edit button to each comment
+      newComment.innerHTML = `
+        <strong>${name}</strong>: ${comment}
+        <button onclick="editComment(this)">Edit</button>
+        <button onclick="deleteComment(this)">Delete</button>
+      `;
+
+      commentContainer.appendChild(newComment);
+
+      // Clear the form fields
+      document.getElementById('name').value = '';
+      document.getElementById('comment').value = '';
     });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-</body>
 
+    // Function to delete a comment
+    function deleteComment(button) {
+      // Remove the comment div
+      button.parentElement.remove();
+    }
+
+    // Function to edit a comment
+    function editComment(button) {
+      const commentText = button.parentElement.querySelector('strong').nextSibling.nodeValue.trim();
+      const newName = prompt('Edit your name:', button.parentElement.querySelector('strong').textContent);
+      const newComment = prompt('Edit your comment:', commentText);
+
+      if (newName !== null && newComment !== null) {
+        button.parentElement.querySelector('strong').textContent = newName;
+        button.parentElement.querySelector('strong').nextSibling.nodeValue = newComment;
+      }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+</body>
 </html>
