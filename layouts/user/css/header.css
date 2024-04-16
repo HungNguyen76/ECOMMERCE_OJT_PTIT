@@ -52,7 +52,7 @@
 
 .ProductOne {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     /* To evenly distribute the space between cards */
     flex-wrap: wrap;
     /* Allow cards to wrap to the next row if there isn't enough space */
