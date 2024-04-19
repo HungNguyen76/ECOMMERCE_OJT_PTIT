@@ -24,12 +24,12 @@ document.getElementById('orderForm').onsubmit = function(event) {
                          'Tổng giá tiền: ' + total + ' VND\n' +
                          'Phương thức thanh toán: ' + paymentMethod;
     
-    if (confirm(confirmMessage)) {
+    if (confirmOrder(confirmMessage)) {
       // Hiển thị thông báo xác nhận bằng alert nếu người dùng xác nhận
       alert('Đơn hàng đã được xác nhận.');
     } else {
       // Ghi vào console nếu người dùng hủy đơn hàng
-      console.log('Đơn hàng đã bị hủy.');
+      alert('Đơn hàng đã bị hủy.');
     }
   }
   
