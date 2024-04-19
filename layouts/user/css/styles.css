@@ -249,6 +249,13 @@ margin-left: 1.3rem;
 /* cards */
 .card {
   margin-bottom: 5rem;
+  position: relative; /* Đảm bảo hiệu ứng sẽ hoạt động chính xác */
+  overflow: hidden; /* Ẩn phần nội dung vượt ra khỏi card khi hiệu ứng blur được áp dụng */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động mềm mại */
+}
+.card:hover {
+  transform: scale(1.05); /* Phóng to card khi di chuột vào */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Áp dụng đổ bóng để tạo hiệu ứng blur */
 }
 .card_top {
   width: 100%;

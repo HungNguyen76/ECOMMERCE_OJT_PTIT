@@ -32,4 +32,19 @@ document.getElementById('orderForm').onsubmit = function(event) {
       alert('Đơn hàng đã bị hủy.');
     }
   }
+  function toggleBankInfo(element) {
+    var bankInfo = document.getElementById('bankInfo');
+    var qrCode = document.getElementById('qrCode');
+    if(element.value === 'bankTransfer') {
+      bankInfo.style.display = 'block';
+      qrCode.style.display = 'block';
+    } else {
+      bankInfo.style.display = 'none';
+      qrCode.style.display = 'none';
+    }
+  }
+  
+  function confirmOrder() {
+    // Đảm bảo rằng hàm này xử lý việc xác nhận đơn hàng
+  }
   

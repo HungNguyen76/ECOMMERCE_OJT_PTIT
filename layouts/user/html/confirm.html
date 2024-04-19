@@ -46,7 +46,7 @@
                 <a 
                   class="nav-link active"
                   aria-current="page"
-                  href="/layouts/user/html/header.html"
+                  href="/pages/user/homepage.html"
                   ><b>HOME</b></a>
                   <span class="col"><b>|</b></span>
                   <a id="pay" class="nav-link active" aria-current="information"><h5>Thanh Toán</h5></a>
@@ -71,15 +71,33 @@
     <input type="number" id="total" name="total" required>
 
     <label for="paymentMethod">Phương Thức Thanh Toán:</label>
-    <select id="paymentMethod" name="paymentMethod">
+    <select id="paymentMethod" name="paymentMethod" onchange="toggleBankInfo(this)">
       <option value="cash">Tiền Mặt</option>
       <option value="creditCard">Thẻ Tín Dụng</option>
       <option value="bankTransfer">Chuyển Khoản Ngân Hàng</option>
     </select>
+    <!-- Phần thông tin tài khoản ngân hàng sẽ hiện thị khi chọn phương thức tài khoản ngân hàng -->
+    <div id="bankInfo" style="display:none;">
+      <label for="bankName">Tên Ngân Hàng:</label>
+      <input type="text" id="bankName" name="bankName">
+
+      <label for="accountNumber">Số Tài Khoản:</label>
+      <input type="text" id="accountNumber" name="accountNumber">
+
+      <label for="accountHolder">Chủ Tài Khoản:</label>
+      <input type="text" id="accountHolder" name="accountHolder">
+    </div>
+
+    <!-- Phần quét mã QR -->
+    <div id="qrCode" style="display:none;">
+      <label for="qrCode">Quét Mã QR:</label>
+      <img id="qrImage" src="đường_dẫn_đến_mã_QR_của_bạn.png" alt="Mã QR Thanh Toán">
+    </div>
 
     <button type="submit" onclick="confirmOrder()">Xác Nhận Thanh Toán</button>
   </form>
 </div>
+      <script src="/layouts/user/js/confirm.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
