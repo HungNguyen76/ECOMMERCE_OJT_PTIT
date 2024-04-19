@@ -100,6 +100,7 @@
     /* Ẩn phần nội dung vượt ra khỏi card khi hiệu ứng blur được áp dụng */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Thêm hiệu ứng chuyển động mềm mại */
+    padding: 20px;
   }
 
   .card:hover {
