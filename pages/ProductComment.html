@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Comments</title>
+  <style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Use full height of the viewport */
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Center the form and comments container */
+#comment-form, .comment-container {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%; 
+  margin-bottom: 20px; 
+}
+
+/* Rest of your styles remain unchanged */
+
+
+#comment-form input,
+#comment-form textarea,
+#comment-form button {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#comment-form button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+  background-color: #003d82;
+}
+
+/* Comments container styling */
+.comment-container {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.comment {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-top: 15px;
+  border-left: 3px solid #0056b3;
+  border-radius: 4px;
+}
+
+
+
+.comment:hover {
+  background-color: #f0f0f0;
+  border-left-color: #003d82;
+}
+
+.section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.auth_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth_img {
+  margin-bottom: 20px;
+}
+
+.auth_image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Form Styles */
+.auth_form {
+  width: 100%;
+}
+
+.form_title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth_p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form_group {
+  margin-bottom: 15px;
+}
+
+.form_input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /
+}
+
+.form_btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form_btn:hover {
+  background-color: #4cae4c;
+}
+
+.form_link, .form_auth_link {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.form_group span {
+  display: block;
+  text-align: center;
+}
+
+.form_auth_link {
+  color: #5cb85c;
+  text-decoration: underline;
+}
+
+.form_auth_link:hover {
+  color: #4cae4c;
+}
+  </style>
+</head>
+<body>
+    <h1>Form Product Comment</h1>
+  <form id="comment-form">
+    <input type="text" id="name" placeholder="Your name" required>
+    <br>
+    <textarea id="comment" placeholder="Your comment" required></textarea>
+    <br>
+    <button type="submit">Submit Comment</button>
+  </form>
+
+  <!-- Container for displaying comments -->
+  <div id="comment-container" class="comment-container"></div>
+
+  <script>
+     document.getElementById('comment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+        const commentContainer = document.getElementById('comment-container');
+        const newComment = document.createElement('div');
+        newComment.classList.add('comment');
+
+        // Add a delete button to each comment
+        newComment.innerHTML = `
+          <strong>${name}</strong>: ${comment}
+          <button onclick="deleteComment(this)">Delete</button>
+        `;
+
+        commentContainer.appendChild(newComment);
+
+        // Clear the form fields
+        document.getElementById('name').value = '';
+        document.getElementById('comment').value = '';
+      });
+
+      // Function to delete a comment
+      function deleteComment(button) {
+        // Remove the comment div
+        button.parentElement.remove();
+      }
+  </script>
+</body>
+</html>

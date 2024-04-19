@@ -1,0 +1,81 @@
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contact-form, .map {
+    flex: 1;
+  }
+  
+
+  /* .cart {
+    padding: 20px;
+    color: black;
+  }
+  .heart {
+    color: black;
+  }
+  .cartHeart {
+    margin-right: 100px;
+  }
+  .add {
+    border-radius: 5px;
+    margin-right: 80px;
+  }
+  :hover.add {
+    background: rgb(44, 175, 231);
+  }
+  .facebook {
+    cursor: pointer;
+  }
+  .bottom {
+    color: white;
+    background-color: rgb(28, 27, 27);
+  }
+  .bot {
+    padding: 50px;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+  }
+  .dizbot {
+    text-align: center;
+  }
+  .bot-C {
+    font-size: 14px;
+    color: #adadad;
+  } */
+
+.map, .contact-form {
+    margin-bottom: 50px; /* Điều chỉnh khoảng cách theo ý muốn */
+  }
+  
+  .bottom {
+    margin-top: 50px; /* Điều chỉnh khoảng cách theo ý muốn */
+  }
+  
+
+  
