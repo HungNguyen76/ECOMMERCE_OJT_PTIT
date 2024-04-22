@@ -51,6 +51,43 @@
         .footer_logo {
             text-decoration: none;
         }
+
+        .profile-container {
+            overflow: hidden;
+            /* Clear floats */
+            display: flex;
+            justify-content: space-between;
+            /* Phần tử con sẽ được căn chỉnh về hai bên */
+            align-items: center;
+            /* Căn chỉnh phần tử con theo chiều dọc */
+        }
+
+        .user-info {
+            float: left;
+            /* Float left */
+        }
+
+        .avatar-container {
+            float: right;
+            /* Float right */
+            border-radius: 50%;
+            /* Border radius to create circle */
+            overflow: hidden;
+            /* Hide overflow to keep it as circle */
+            width: 100px;
+            /* Adjust width as needed */
+            height: 100px;
+            /* Adjust height as needed */
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            /* Ensure image fills the container */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
     </style>
 </head>
 
@@ -124,8 +161,8 @@
     </header>
 
     <div class="profile-container">
-        <h1>User Profile</h1>
         <div class="user-info">
+            <h1>User Profile</h1>
             <p>Name: <span id="user-name"></span></p>
             <p>Email: <span id="user-email"></span></p>
             <p>Date of Birth: <span id="user-dob"></span></p>
@@ -134,7 +171,13 @@
             <p>Hometown: <span id="user-hometown"></span></p>
             <!-- You can add more user information fields here -->
         </div>
+        <div class="avatar-container">
+            <img src="/pages/user/image/Avatar.jpg" alt="User Avatar">
+        </div>
     </div>
+
+
+
 
     <footer class="footer" data-sr-id="11"
         style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">

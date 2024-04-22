@@ -1,4 +1,4 @@
-let list_products = [
+const list_products = [
     {
         name: "Dell Precision 5550 - Core i7 10750H 16GB",
         img: "/pages/user/image/45448_laptop_dell_latitude_5520_42lt552003_anphatpc.jpg",
@@ -7,13 +7,12 @@ let list_products = [
         quant: "0"
     },
     {
-        name: "MacBook Air 13 Inch M1",
+        name: "MacBook Air 13 Inch M100 CEH",
         img: "/pages/user/image/Mac_Air.jpg",
         price: "8.990.000VNĐ",
         masp: "M2",
         quant: "5"
     },
-
     {
         name: "Laptop Dell Precision 7530 Core i7-8850H",
         img: "/pages/user/image/v14_den_1412dcdc644640c782821e9be102a32d_master.webp",
@@ -21,7 +20,6 @@ let list_products = [
         masp: "M3",
         quant: "2"
     },
-
     {
         name: "Laptop Lenovo V14 G3 IAP 82TS0067VN",
         img: "/pages/user/image/Laptop Dell P15 35.webp",
@@ -29,15 +27,13 @@ let list_products = [
         masp: "M4",
         quant: "5"
     },
-
     {
         name: "Bàn phím AKKO 3098 RF World Tour London",
         img: "/pages/user/image/Bàn phím AKKO.jpg",
         price: "1.599.000VNĐ",
         masp: "M5",
-        quant: "12"    
+        quant: "12"
     },
-
     {
         name: "Bàn phím AKKO 3098 RF Dracula Castle",
         img: "/pages/user/image/Bàn phím Akko 3098 RF Dracula.png",
@@ -45,7 +41,6 @@ let list_products = [
         masp: "M6",
         quant: "22"
     },
-
     {
         name: "Bàn phím AKKO 3098 RF Dracula Castle",
         img: "/pages/user/image/Bàn phím Akko 3098 RF Dracula.png",
@@ -60,7 +55,6 @@ let list_products = [
         masp: "M8",
         quant: "27"
     },
-
     {
         name: "Bàn phím AKKO ACR Pro Alice Plus",
         img: "/pages/user/image/Bàn phím Akko ACR Pro Alice Plus.jpg",
@@ -68,7 +62,6 @@ let list_products = [
         masp: "M9",
         quant: "10"
     },
-
     {
         name: "Chuột Chơi Game Razer Orochi V2",
         img: "/pages/user/image/Chuột Gaming Razer Orochi V2.webp",
@@ -76,7 +69,6 @@ let list_products = [
         masp: "M10",
         quant: "234"
     },
-
     {
         name: "Chuột Bluetooth Logitech Pebble M350S",
         img: "/pages/user/image/Chuột không dây LOGITECH PEBBLE.webp",
@@ -84,7 +76,6 @@ let list_products = [
         masp: "M11",
         quant: "102"
     },
-
     {
         name: "Chuột chơi game FPS AKKO RG389 Black ",
         img: "/pages/user/image/Chuột chơi game.jpg",
@@ -92,7 +83,6 @@ let list_products = [
         masp: "M12",
         quant: "34"
     },
-
     {
         name: "Chuột Không dây Gaming Razer Blasilik",
         img: "/pages/user/image/Chuột Không dây Gaming Razer Basilisk X HyperSpeed.webp",
@@ -100,4 +90,16 @@ let list_products = [
         masp: "M13",
         quant: "302"
     },
-]
+];
+
+
+// Chuyển danh sách sản phẩm thành chuỗi JSON
+const productListString = JSON.stringify(list_products);
+
+// Lưu vào localStorage
+localStorage.setItem('list_products', productListString);
+
+console.log('Danh sách sản phẩm đã được lưu vào localStorage.');
+
+
+

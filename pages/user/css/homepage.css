@@ -101,6 +101,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Thêm hiệu ứng chuyển động mềm mại */
     padding: 20px;
+    cursor: pointer;
   }
 
   .card:hover {
@@ -109,3 +110,55 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     /* Áp dụng đổ bóng để tạo hiệu ứng blur */
   }
+
+
+  
+  .star-rating {
+    direction: rtl;
+    display: inline-flex;
+    padding: 20px;
+  }
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+  .star-rating label {
+    color: #bbb;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+  .star-rating label:hover,
+  .star-rating label:hover ~ label,
+  .star-rating input[type="radio"]:checked ~ label {
+    color: #f0ad4e;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    margin-top: 3px;
+  }
+  
+  a.btn {
+    flex: 1; /* Distribute available space equally among items */
+    border-radius: 12px;
+    border: 3px solid;
+    padding: 0.8rem 2.4rem;
+    transition: background-color 0.5s ease;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-color: black;
+    color: black;
+  }
+  
+  a.btn:hover {
+    background-color: black;
+  }
+  
+
+
+
+  
