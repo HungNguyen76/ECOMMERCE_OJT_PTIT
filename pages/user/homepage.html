@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="/layouts/user/css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/pages/user/css/homepage.css">
+  <link rel="stylesheet" href="/pages/user/css/homepage.css">
 </head>
 
 <body>
@@ -24,19 +24,17 @@
     <nav class="nav" data-sr-id="2"
       style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
       <div class="container nav_container">
-        <a class="navbar-brand" href="/pages/user/homepage.html">
-          <img src="/pages/user/image/logo pc pro.png" alt="" style="width: 80px; height: 50px">
-        </a>
         <a href="/pages/user/homepage.html" class="nav_logo">Pro PC</a>
         <ul class="nav_list">
           <li class="nav_item"><a href="/pages/user/homepage.html" class="nav_link">Home</a></li>
-          <li class="nav_item"><a href="./products.html" class="nav_link">Our Products</a></li>
+          <li class="nav_item"><a href="/pages/user/OurProduct.html" class="nav_link">Our Products</a></li>
           <li class="nav_item"><a href="/pages/user/FormContenct.html" class="nav_link">Contact Us</a></li>
 
         </ul>
         <div class="nav_items">
           <form action="#" class="nav_form">
-            <input type="text" class="nav_input" placeholder="Search here....">
+            <input type="text" id="searchInput" class="nav_input" placeholder="Search here...."
+              oninput="searchProducts(this.value)">
             <img src="/layouts/user/img/z5348968763650_8adacfd0c9a33b642767f76f50f69d0c.jpg" alt="" class="nav_search">
           </form>
           <img src="/layouts/user/img/z5348961109406_9a2ec4fcfbb760868d1ea1ac1d913208.jpg" alt="" class="nav_heart">
@@ -45,10 +43,7 @@
             <span id="cart_count">0</span> <!-- Thêm thẻ span để hiển thị số lượng -->
           </a>
           <div class="dropdown dropdown-click">
-            <!-- <a href="javascript:void(0)" onclick="myFunction()" class="dropbtn">
-              <i class="fas fa-user-circle"></i></a> -->
-            <!-- Add a new link for the user profile page -->
-            <a href="/user.html"><i class="fas fa-user-circle"></i></a>
+            <a href="/pages/user/UserPro.html"><i class="fas fa-user-circle"></i></a>
 
             <div id="myDropdown" class="dropdown-content">
               <a href="/pages/user/login.html">Log in/ Log out</a>
@@ -63,25 +58,6 @@
           </svg>
         </span>
 
-    </nav>
-    <nav class="mobile_nav mobile_nav_hide">
-      <ul class="mobile_nav_list">
-        <li class="mobile_nav_item">
-          <a href="/" class="mobile_nav_link">Home</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="#" class="mobile_nav_link">About</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="#" class="mobile_nav_link">Contact Us</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="/sign-up.html" class="mobile_nav_link">Sign Up</a>
-        </li>
-        <li class="mobile_nav_item">
-          <a href="/cart.html" class="mobile_nav_link">Cart</a>
-        </li>
-      </ul>
     </nav>
   </header>
 
@@ -122,6 +98,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -133,6 +121,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -144,6 +144,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -155,6 +167,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -171,6 +195,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -182,7 +218,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
-
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -194,6 +241,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -205,6 +264,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -222,6 +293,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -233,6 +316,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -245,6 +340,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -256,6 +363,18 @@
         <a href="#" class="btn btn-primary">Mua</a>
         <a href="#" class="btn btn-primary">Giỏ hàng</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <form class="star-rating">
+          <input id="star-5" type="radio" name="rating" value="5">
+          <label for="star-5" title="5 sao">★</label>
+          <input id="star-4" type="radio" name="rating" value="4">
+          <label for="star-4" title="4 sao">★</label>
+          <input id="star-3" type="radio" name="rating" value="3">
+          <label for="star-3" title="3 sao">★</label>
+          <input id="star-2" type="radio" name="rating" value="2">
+          <label for="star-2" title="2 sao">★</label>
+          <input id="star-1" type="radio" name="rating" value="1">
+          <label for="star-1" title="1 sao">★</label>
+        </form>
       </div>
     </div>
 
@@ -273,7 +392,9 @@
   <!-- Container for displaying comments -->
   <div id="comment-container" class="comment-container"></div>
 
-
+  <div id="product-details">
+    <!-- Đây là nơi hiển thị thông tin chi tiết sản phẩm khi click vào card -->
+  </div>
 
   <footer>
     <section class="section" data-sr-id="10"
@@ -346,126 +467,11 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
     <script src="/pages/user/js/datapro.js"></script>
-    <script>
-      var myCarousel = document.querySelector('#carouselExampleIndicators');
-      var carousel = new bootstrap.Carousel(myCarousel, {
-        interval: 2000, // Thời gian chuyển đổi giữa các slide (miliseconds)
-        wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
-      });
-
-
-      // Load existing comments from localStorage when the page loads
-      document.addEventListener('DOMContentLoaded', function () {
-        loadComments();
-      });
-
-      document.getElementById('comment-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const comment = document.getElementById('comment').value;
-        const commentContainer = document.getElementById('comment-container');
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment');
-
-        // Add a delete and edit button to each comment
-        newComment.innerHTML = `
-        <strong>${name}</strong>: ${comment}
-        <button onclick="editComment(this)">Edit</button>
-        <button onclick="deleteComment(this)">Delete</button>
-    `;
-
-        commentContainer.appendChild(newComment);
-
-        // Save the comment to localStorage
-        saveComment(name, comment);
-
-        // Clear the form fields
-        document.getElementById('name').value = '';
-        document.getElementById('comment').value = '';
-      });
-
-      // Function to delete a comment
-      function deleteComment(button) {
-        // Remove the comment div
-        button.parentElement.remove();
-        // Remove the comment from localStorage
-        removeComment(button.parentElement.querySelector('strong').textContent.trim());
-      }
-
-      // Function to edit a comment
-      function editComment(button) {
-        const commentText = button.parentElement.querySelector('strong').nextSibling.nodeValue.trim();
-        const newName = prompt('Edit your name:', button.parentElement.querySelector('strong').textContent);
-        const newComment = prompt('Edit your comment:', commentText);
-
-        if (newName !== null && newComment !== null) {
-          button.parentElement.querySelector('strong').textContent = newName;
-          button.parentElement.querySelector('strong').nextSibling.nodeValue = newComment;
-          // Update the comment in localStorage
-          updateComment(newName, newComment, button.parentElement);
-        }
-      }
-
-      // Function to save a comment to localStorage
-      function saveComment(name, comment) {
-        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-        comments.push({ name: name, comment: comment });
-        localStorage.setItem('comments', JSON.stringify(comments));
-      }
-
-      // Function to load comments from localStorage
-      function loadComments() {
-        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-        const commentContainer = document.getElementById('comment-container');
-        comments.forEach(function (item) {
-          const newComment = document.createElement('div');
-          newComment.classList.add('comment');
-          newComment.innerHTML = `<strong>${item.name}</strong>: ${item.comment}<button onclick="editComment(this)">Edit</button><button onclick="deleteComment(this)">Delete</button>`;
-          commentContainer.appendChild(newComment);
-        });
-      }
-
-      // Function to remove a comment from localStorage
-      function removeComment(name) {
-        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-        comments = comments.filter(item => item.name !== name);
-        localStorage.setItem('comments', JSON.stringify(comments));
-      }
-
-      // Function to update a comment in localStorage
-      function updateComment(name, comment, element) {
-        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-        comments.forEach(item => {
-          if (item.name === name) {
-            item.comment = comment;
-          }
-        });
-        localStorage.setItem('comments', JSON.stringify(comments));
-      }
-
-      // Update the function name to avoid conflicts
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+    <script src="/pages/user/js/datapro.js"></script>
+    <script src="/pages/user/js/homePage.js"></script>
 </body>
 
 </html>

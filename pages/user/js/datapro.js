@@ -1,4 +1,4 @@
-let list_products = [
+const list_products = [
     {
         name: "Dell Precision 5550 - Core i7 10750H 16GB",
         img: "/pages/user/image/45448_laptop_dell_latitude_5520_42lt552003_anphatpc.jpg",
