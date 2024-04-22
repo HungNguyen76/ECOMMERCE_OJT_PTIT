@@ -49,7 +49,7 @@ const list_products = [
         quant: "22"
     },
     {
-        name: "Bàn phím AKKO 5108B Demon Slayer – Kamado Nezuko",
+        name: "Bàn phím Demon Slayer Kamado Nezuko",
         img: "/pages/user/image/Bàn phím Demon Slayer.jpg",
         price: "2.959.000VNĐ",
         masp: "M8",
@@ -89,6 +89,27 @@ const list_products = [
         price: "1.990.000VNĐ",
         masp: "M13",
         quant: "302"
+    },
+    {
+        name: "Bàn phím cơ AKKO MOD007 PC Blue White Piano Switch",
+        img: "/pages/user/image/Bàn phím cơ MOD007 PC BLUE on White.webp",
+        price: "1.790.000VNĐ",
+        masp: "M43",
+        quant: "12"
+    },
+    {
+        name: "Chuột không dây A4 Tech FG20",
+        img: "/pages/user/image/Chuột không dây A4 Tech FG20.jpg",
+        price: "250.000VNĐ",
+        masp: "A01",
+        quant: "8"
+    },
+    {
+        name: "Chuột có dây Gaming Asus TUF M3 Gen II",
+        img: "/pages/user/image/Chuột có dây Gaming Asus TUF M3 Gen II.jpg",
+        price: "500.000VNĐ",
+        masp: "FG3",
+        quant: "6"
     },
 ];
 

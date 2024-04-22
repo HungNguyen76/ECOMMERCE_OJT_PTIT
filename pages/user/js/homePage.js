@@ -113,9 +113,42 @@ var myCarousel = document.querySelector('#carouselExampleIndicators');
         }
       }
 
-      document.querySelector('.star-rating').addEventListener('change', function (e) {
-        alert('Bạn đã đánh giá ' + e.target.value + ' sao. Cảm ơn bạn!');
-      });
+      // document.querySelector('.star-rating').addEventListener('change', function (e) {
+      //   alert('Bạn đã đánh giá ' + e.target.value + ' sao. Cảm ơn bạn!');
+      // });
 
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageModal = document.getElementById("messageModal");
+        const messageForm = document.getElementById("messageForm");
+      
+        // Hiển thị modal khi nhấn vào biểu tượng tin nhắn
+        const floatingIcon = document.querySelector(".floating-icon");
+        floatingIcon.addEventListener("click", function () {
+          const modal = new bootstrap.Modal(messageModal, {
+            keyboard: false,
+          });
+          modal.show();
+        });
+      
+        // Xử lý khi người dùng gửi tin nhắn
+        messageForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("messageName").value;
+          const content = document.getElementById("messageContent").value;
+      
+          // Ở đây bạn có thể thực hiện xử lý gửi tin nhắn, ví dụ:
+          // Gửi thông tin name và content đến server
+      
+          // Sau khi xử lý, có thể hiển thị thông báo thành công hoặc đóng modal
+          alert("Message sent successfully!");
+          const modal = bootstrap.Modal.getInstance(messageModal);
+          modal.hide();
+      
+          // Để tránh gửi form nhiều lần, bạn có thể reset form sau khi gửi
+          messageForm.reset();
+        });
+      });
+      
       
       
