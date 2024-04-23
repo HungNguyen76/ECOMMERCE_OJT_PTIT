@@ -4,6 +4,7 @@ const list_products = [
         img: "/pages/user/image/45448_laptop_dell_latitude_5520_42lt552003_anphatpc.jpg",
         price: "14.990.000VNĐ",
         masp: "M1",
+        des: "Để tí thêm vào nha",
         quant: "0"
     },
     {
@@ -11,6 +12,7 @@ const list_products = [
         img: "/pages/user/image/Mac_Air.jpg",
         price: "8.990.000VNĐ",
         masp: "M2",
+        des: "Để tí thêm vào nha",
         quant: "5"
     },
     {
@@ -18,6 +20,7 @@ const list_products = [
         img: "/pages/user/image/v14_den_1412dcdc644640c782821e9be102a32d_master.webp",
         price: "13.500.000VNĐ",
         masp: "M3",
+        des: "Để tí thêm vào nha",
         quant: "2"
     },
     {
@@ -25,6 +28,7 @@ const list_products = [
         img: "/pages/user/image/Laptop Dell P15 35.webp",
         price: "13.500.000VNĐ",
         masp: "M4",
+        des: "Để tí thêm vào nha",
         quant: "5"
     },
     {
@@ -32,6 +36,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím AKKO.jpg",
         price: "1.599.000VNĐ",
         masp: "M5",
+        des: "Để tí thêm vào nha",
         quant: "12"
     },
     {
@@ -39,6 +44,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím Akko 3098 RF Dracula.png",
         price: "1.799.000VNĐ",
         masp: "M6",
+        des: "Để tí thêm vào nha",
         quant: "22"
     },
     {
@@ -46,6 +52,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím Akko 3098 RF Dracula.png",
         price: "1.799.000VNĐ",
         masp: "M7",
+        des: "Để tí thêm vào nha",
         quant: "22"
     },
     {
@@ -53,6 +60,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím Demon Slayer.jpg",
         price: "2.959.000VNĐ",
         masp: "M8",
+        des: "Để tí thêm vào nha",
         quant: "27"
     },
     {
@@ -60,6 +68,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím Akko ACR Pro Alice Plus.jpg",
         price: "1.959.000VNĐ",
         masp: "M9",
+        des: "Để tí thêm vào nha",
         quant: "10"
     },
     {
@@ -67,6 +76,7 @@ const list_products = [
         img: "/pages/user/image/Chuột Gaming Razer Orochi V2.webp",
         price: "590.000VNĐ",
         masp: "M10",
+        des: "Để tí thêm vào nha",
         quant: "234"
     },
     {
@@ -74,6 +84,7 @@ const list_products = [
         img: "/pages/user/image/Chuột không dây LOGITECH PEBBLE.webp",
         price: "499.000VNĐ",
         masp: "M11",
+        des: "Để tí thêm vào nha",
         quant: "102"
     },
     {
@@ -81,6 +92,7 @@ const list_products = [
         img: "/pages/user/image/Chuột chơi game.jpg",
         price: "899.000VNĐ",
         masp: "M12",
+        des: "Để tí thêm vào nha",
         quant: "34"
     },
     {
@@ -88,6 +100,7 @@ const list_products = [
         img: "/pages/user/image/Chuột Không dây Gaming Razer Basilisk X HyperSpeed.webp",
         price: "1.990.000VNĐ",
         masp: "M13",
+        des: "Để tí thêm vào nha",
         quant: "302"
     },
     {
@@ -95,6 +108,7 @@ const list_products = [
         img: "/pages/user/image/Bàn phím cơ MOD007 PC BLUE on White.webp",
         price: "1.790.000VNĐ",
         masp: "M43",
+        des: "Để tí thêm vào nha",
         quant: "12"
     },
     {
@@ -102,6 +116,7 @@ const list_products = [
         img: "/pages/user/image/Chuột không dây A4 Tech FG20.jpg",
         price: "250.000VNĐ",
         masp: "A01",
+        des: "Để tí thêm vào nha",
         quant: "8"
     },
     {
@@ -109,6 +124,7 @@ const list_products = [
         img: "/pages/user/image/Chuột có dây Gaming Asus TUF M3 Gen II.jpg",
         price: "500.000VNĐ",
         masp: "FG3",
+        des: "Để tí thêm vào nha",
         quant: "6"
     },
 ];
