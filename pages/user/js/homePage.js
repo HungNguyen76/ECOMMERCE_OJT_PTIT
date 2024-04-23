@@ -113,9 +113,9 @@ var myCarousel = document.querySelector('#carouselExampleIndicators');
         }
       }
 
-      // document.querySelector('.star-rating').addEventListener('change', function (e) {
-      //   alert('Bạn đã đánh giá ' + e.target.value + ' sao. Cảm ơn bạn!');
-      // });
+      document.querySelector('.star-rating').addEventListener('change', function (e) {
+        alert('Bạn đã đánh giá ' + e.target.value + ' sao. Cảm ơn bạn đã đánh giá sản phẩm!');
+      });
 
 
       document.addEventListener("DOMContentLoaded", function () {
