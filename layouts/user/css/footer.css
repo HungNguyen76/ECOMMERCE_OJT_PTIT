@@ -1,0 +1,21 @@
+  .facebook {
+    cursor: pointer;
+  }
+  .bottom {
+    color: white;
+    background-color: rgb(28, 27, 27);
+  }
+  .bot {
+    padding: 50px;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+  }
+  .dizbot {
+    text-align: center;
+  }
+  .bot-C {
+    font-size: 14px;
+    color: #adadad;
+  }
+  

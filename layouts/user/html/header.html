@@ -1,142 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dựng giao diện</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-    integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- 
-  <link rel="stylesheet" href="/layouts/user/css/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dựng giao diện</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/layouts/user/css/header.css">
- 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img
+              src="/layouts/user/img/2605_hinh-nen-cong-nghe-pc60.jpg"
+              alt=""
+              style="width: 100px; height: 50px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-  <nav class="nav" data-sr-id="2"
-    style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-    <div class="container nav_container">
-      <a href="/layouts/user/html/header.html" class="nav_logo">Pro PC</a>
-      <ul class="nav_list">
-        <li class="nav_item"><a href="./index.html" class="nav_link">Home</a></li>
-        <li class="nav_item"><a href="./products.html" class="nav_link">Our Products</a></li>
-        <li class="nav_item"><a href="/pages/user/FormContenct.html" class="nav_link">Contact Us</a></li>
-
-      </ul>
-      <div class="nav_items">
-        <form action="#" class="nav_form">
-          <input type="text" class="nav_input" placeholder="Search here....">
-          <img src="/layouts/user/img/z5348968763650_8adacfd0c9a33b642767f76f50f69d0c.jpg" alt="" class="nav_search">
-        </form>
-        <img src="/layouts/user/img/z5348961109406_9a2ec4fcfbb760868d1ea1ac1d913208.jpg" alt="" class="nav_heart">
-        <a class="nav_cart" onclick="window.location.href='./cart.html'">
-          <img src="/layouts/user/img/z5348961102754_458d2d466f8d7180c1a07dbcd5565a74.jpg" alt="">
-          <span id="cart_count">0</span> <!-- Thêm thẻ span để hiển thị số lượng -->
-        </a>
-        <div class="dropdown dropdown-click">
-          <a href="javascript:void(0)" onclick="myFunction()" class="dropbtn">
-            <i class="fas fa-user-circle"></i></a>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="/pages/user/login (1).html">Log in/ Log out</a>
-
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/layouts/user/html/header.html"
+                  ><b>HOME</b></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  ><b>CONTACT FORM</b></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/layouts/user/html/showproducts.html"
+                  ><b>PRODUCTS</b></a
+                >
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="">
+                  <b>PRODUCTS</b>
+                </a> -->
+                <!-- <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><b>LAPTOP</b></a></li>
+                  <li><a class="dropdown-item" href="#"><b>PC</b></a></li>
+                  <li><a class="dropdown-item" href="#"><b>MOUSE</b></a></li>
+                  <li><a class="dropdown-item" href="#"><b>KEYBOARD</b></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><b>Another Products</b></a></li>
+                </ul> -->
+              </li>
+            </ul>
+            <div class="search-bar" role="search">
+              <input id="searchInput" class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+              <div id="searchResults"></div>
+              <!-- <button class="fas fa-search" type="submit"></button> -->
+            </div>
+            <div class="nav-icon">
+                <a id="userIcon" class="nav-link" href="#">
+                    <a id="cartIcon" class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <span class="cart-icon">&#128722;</span>
+                        <span id="cartItemCount">0</span>
+                      </a>
+                </a>
+            </div>
+            <div class="ml-2 d-inline-flex align-items-center">
+              <a class="nav-link" onclick="logOut()" href="#"
+                ><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <span class="hamburger">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-      </svg>
-    </span>
-
-  </nav>
-  <nav class="mobile_nav mobile_nav_hide">
-    <ul class="mobile_nav_list">
-      <li class="mobile_nav_item">
-        <a href="/" class="mobile_nav_link">Home</a>
-      </li>
-      <li class="mobile_nav_item">
-        <a href="#" class="mobile_nav_link">About</a>
-      </li>
-      <li class="mobile_nav_item">
-        <a href="#" class="mobile_nav_link">Contact Us</a>
-      </li>
-      <li class="mobile_nav_item">
-        <a href="/sign-up.html" class="mobile_nav_link">Sign Up</a>
-      </li>
-      <li class="mobile_nav_item">
-        <a href="/cart.html" class="mobile_nav_link">Cart</a>
-      </li>
-    </ul>
-  </nav>
-</head>
-
- 
-
-<footer>
-  <section class="section" data-sr-id="10" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-    <div class="container services_container">
-      <div class="service">
-        <img src="/pages/user/image/1.jpg" alt="" class="service_img">
-        <h3 class="service_title">FAST AND FREE DELIVERY</h3>
-      </div>
-      <div class="service">
-        <img src="/pages/user/image/2.jpg" alt="" class="service_img">
-        <h3 class="service_title">24/7 SUPPORT</h3>
-      </div>
-      <div class="service">
-        <img src="/pages/user/image/3.jpg" alt="" class="service_img">
-        <h3 class="service_title">MONEY BACK GUARANTY</h3>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer" data-sr-id="11" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-    <div class="container footer_container">
-      <div class="footer_item">
-        <a href="./index.html" class="footer_logo">PC Pro</a>
-        <div class="footer_p">''
-        </div>
-      </div>
-      <div class="footer_item">
-        <h3 class="footer_item_titl">Contact</h3>
-        <ul class="footer_list">
-          <li class="li footer_list_item">Stockholm, Sweden</li>
-          <li class="li footer_list_item">email@gmail.com</li>
-          <li class="li footer_list_item">+46 123 456 78</li>
-          <li class="li footer_list_item">+46 72 345 67</li>
-        </ul>
-      </div>
-      <div class="footer_item">
-        <h3 class="footer_item_titl">Support</h3>
-        <ul class="footer_list">
-          <li class="li footer_list_item">Account</li>
-          <li class="li footer_list_item">Login / Register</li>
-          <li class="li footer_list_item">Cart</li>
-          <li class="li footer_list_item">Shop</li>
-        </ul>
-      </div>
-      <div class="footer_item">
-        <h3 class="footer_item_titl">Privacy</h3>
-        <ul class="footer_list">
-          <li class="li footer_list_item">Privacy policy</li>
-          <li class="li footer_list_item">Terms of use</li>
-          <li class="li footer_list_item">FAQ's</li>
-          <li class="li footer_list_item">Contact</li>
-        </ul>
-      </div>
-    </div>
-</footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+      </nav>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="/layouts/user/js/header.js"></script>
 </body>
 </html>

@@ -1,187 +1,79 @@
-.cart {
-    padding: 20px;
-    color: black;
-}
-
-.heart {
-    color: black;
-}
-
-.cartHeart {
-    margin-right: 100px;
-}
-
-.add {
-    border-radius: 5px;
-    margin-right: 80px;
-}
-
-:hover.add {
-    background: rgb(44, 175, 231);
-}
-
-.facebook {
-    cursor: pointer;
-}
-
-.bottom {
-    color: white;
-    background-color: rgb(28, 27, 27);
-}
-
-.bot {
-    padding: 50px;
-    display: flex;
-    color: white;
-    justify-content: space-evenly;
-}
-
-.dizbot {
-    text-align: center;
-}
-
-.bot-C {
-    font-size: 14px;
-    color: #adadad;
-}
-
-.Tittle {
-    font-size: 70px;
-    text-align: center;
-}
-
-.ProductOne {
-    display: flex;
-    justify-content: space-around;
-    /* To evenly distribute the space between cards */
-    flex-wrap: wrap;
-    /* Allow cards to wrap to the next row if there isn't enough space */
-    margin: 0 -10px;
-    /* Adjust the margin as needed */
-}
-
-.card {
-    width: calc(25% - 20px);
-    margin: 10px;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-}
-
 .search-bar {
-    display: flex;
-    justify-content: flex-end;
+    position: relative;
     margin-left: 400px;
+    position: relative;
+    margin: auto;
+    width: 40%;
+    margin-top: 20px;
 }
 
-.nav-icon {
+.search-bar button{
+    margin-left: 450px;
+}
+
+.search-bar input[type="search"]{
+    border: none; 
+    padding: 0px; 
+}
+
+#searchInput {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #searchResults {
+    position: absolute;
+    width: 80%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    display: none;
+  }
+
+  #searchResults a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  #searchResults a:hover {
+    background-color: #f1f1f1;
+  }
+
+  #searchResults.show {
+    display: block;
+  }
+
+.nav-icon{
     display: flex;
     justify-content: center;
     margin-right: 20px;
 }
-
-.container-fluid {
-    background-color: rgb(228, 202, 202);
+.container-fluid{
+   background-color: rgb(228, 202, 202); 
+}
+.navbar-nav .nav-item b:hover {
+    color: rgb(87, 4, 165); 
+}
+.dropdown-item b:hover {
+    color: rgb(163, 166, 15);
+}
+.nav-link:hover {
+    color: #007bff; 
+}
+.nav-link:hover i {
+    color: #007bff; 
 }
 
 
-.carousel {
-    width: 100%;
-    position: relative;
-  }
-  
-  .carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-item {
-    position: relative;
-    display: none;
-    float: left;
-    margin-right: -100%;
-    width: 892px;
-    height: 334px;
-  }
-  
-  .carousel-item.active {
-    display: block;
-  }
-  /* CSS */
-  .carousel-item {
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-  }
-  
-  .carousel-item.active {
-    opacity: 1;
-  }
-  
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  .carousel-control-prev {
-    left: 0;
-  }
-  
-  .carousel-control-next {
-    right: 0;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: auto;
-    height: auto;
-  }
-
-  
-  .carousel-item img {
-    width: 100%; /* Chiều rộng tối đa */
-    height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ */
-    object-fit: cover; /* Đảm bảo ảnh phủ đầy khung mà không bị méo */
-}
-
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 200px; /* Chiều cao cho thiết bị nhỏ hơn */
-    }
-}
-.footer_item {
-    display: flex; /* Sử dụng Flexbox */
-    flex-direction: column; /* Các mục sẽ xếp theo chiều dọc */
-    align-items: flex-start; /* Căn chỉnh các mục về phía bên trái */
-    padding: 0; /* Xóa padding nếu có */
-    margin: 0; /* Xóa margin nếu có */
-}
-
-.footer_list {
-    list-style-type: none; /* Xóa các dấu bullet điểm */
-    padding: 0; /* Xóa padding nếu có */
-    margin: 0; /* Xóa margin nếu có */
-}
-
-.footer_list_item {
-    margin-bottom: 10px; /* Thêm khoảng cách giữa các mục */
-}
-
-
-.footer_item {
-    display: flex;
-    justify-content: space-between; /* Phân bổ khoảng trống đều giữa các mục */
-}
+ 

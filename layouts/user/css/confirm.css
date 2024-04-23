@@ -1,0 +1,39 @@
+.nav-item{
+    display: flex;
+    justify-content: center;
+}
+body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    width: 700px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: auto;
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+  }
+  input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+  }
+  label {
+    margin-top: 10px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 50px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+

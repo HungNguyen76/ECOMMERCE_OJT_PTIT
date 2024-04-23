@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Giỏ Hàng</title>
+<style>
+  /* ...các định dạng CSS khác... */
+  .product-list {
+    margin-top: 20px;
+  }
+  .product-item {
+    margin-bottom: 10px;
+  }
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .add-to-cart-btn {
+    padding: 5px 10px;
+    background-color: #f0ad4e;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .add-to-cart-btn:hover {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- ...form đơn hàng... -->
+
+  <div class="product-list">
+    <h3>Sản Phẩm:</h3>
+    <div class="product-item" id="product1">
+      <div class="product-info">
+        <span>Tên sản phẩm 1</span>
+        <span>Giá: 100,000 VND</span>
+        <button class="add-to-cart-btn" onclick="addToCart('product1')">Thêm vào giỏ</button>
+      </div>
+    </div>
+    <!-- Thêm các sản phẩm khác tương tự như trên -->
+  </div>
+</div>
+
+<script>
+// Giả sử chúng ta có một đối tượng giỏ hàng
+var cart = {};
+
+function addToCart(productId) {
+  // Thêm sản phẩm vào giỏ hàng
+  var productInfo = document.getElementById(productId).innerText;
+  cart[productId] = productInfo;
+  console.log('Giỏ hàng:', cart);
+  // Cập nhật giao diện giỏ hàng hoặc lưu giỏ hàng vào local storage
+}
+</script>
+
+</body>
+</html>
