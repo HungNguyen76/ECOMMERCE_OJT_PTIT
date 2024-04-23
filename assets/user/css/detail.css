@@ -1,0 +1,72 @@
+.product-detail {
+    display: flex;
+    flex-direction: row-reverse; 
+    /* Đảo ngược thứ tự hiển thị: hình ảnh bên trái, thông tin bên phải */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .product-info {
+    max-width: 60%; /* Chiếm 60% chiều rộng để hiển thị thông tin sản phẩm */
+    margin-right: 200px;
+  }
+  
+  .product-image {
+    max-width: 35%; /* Chiếm 40% chiều rộng để hiển thị ảnh sản phẩm */
+    text-align: center;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product-actions {
+    max-width: 100%; /* Chiếm 60% chiều rộng để hiển thị các action */
+  }
+  
+  /* Đặt nút "Thêm vào giỏ hàng" và "Yêu thích" bên phải */
+  #addToCartBtn,
+  #addToWishlistBtn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 3px solid;
+    padding: 0.8rem 2.4rem;
+    transition: background-color 0.5s ease;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-color: black;
+    color: black;
+  }
+  
+  /* Đặt các nút action ngang hàng */
+  #addToCartBtn,
+  #addToWishlistBtn{
+    background-color: black;
+    color: #fff;
+  }
+
+  #addToCartBtn:hover {
+    background-color: white;
+    color: black;
+  }
+
+  #addToWishlistBtn:hover {
+    background-color: white;
+    color: black;
+  }
+  .comment-container:hover {
+    background-color: white;
+    color: black;
+  }
+  .comment-container {
+    background-color: black;
+    color: white;
+  }
+
+
+ 
