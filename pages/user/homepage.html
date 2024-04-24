@@ -33,7 +33,7 @@
             <img src="/layouts/user/img/z5348968763650_8adacfd0c9a33b642767f76f50f69d0c.jpg" alt="" class="nav_search">
           </form>
           <img src="/layouts/user/img/z5348961109406_9a2ec4fcfbb760868d1ea1ac1d913208.jpg" alt="" class="nav_heart">
-          <a class="nav_cart" onclick="window.location.href='./cart.html'">
+          <a class="nav_cart" onclick="window.location.href='/pages/user/cart.html'">
             <img src="/layouts/user/img/z5348961102754_458d2d466f8d7180c1a07dbcd5565a74.jpg" alt="">
             <span id="cart_count">0</span> <!-- Thêm thẻ span để hiển thị số lượng -->
           </a>
@@ -451,6 +451,47 @@
     <script src="/pages/user/js/listPro.js"></script>
     <script src="/pages/user/js/renderPro.js"></script>
     <script src="/assets/user/js/detail.js"></script>
+    <script>
+      var myCarousel = document.querySelector('#carouselExampleIndicators');
+      var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 2000, // Thời gian chuyển đổi giữa các slide (miliseconds)
+        wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
+      });
+
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageModal = document.getElementById("messageModal");
+        const messageForm = document.getElementById("messageForm");
+      
+        // Hiển thị modal khi nhấn vào biểu tượng tin nhắn
+        const floatingIcon = document.querySelector(".floating-icon");
+        floatingIcon.addEventListener("click", function () {
+          const modal = new bootstrap.Modal(messageModal, {
+            keyboard: false,
+          });
+          modal.show();
+        });
+      
+        // Xử lý khi người dùng gửi tin nhắn
+        messageForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("messageName").value;
+          const content = document.getElementById("messageContent").value;
+      
+          // Ở đây bạn có thể thực hiện xử lý gửi tin nhắn, ví dụ:
+          // Gửi thông tin name và content đến server
+      
+          // Sau khi xử lý, có thể hiển thị thông báo thành công hoặc đóng modal
+          alert("Message sent successfully!");
+          const modal = bootstrap.Modal.getInstance(messageModal);
+          modal.hide();
+      
+          // Để tránh gửi form nhiều lần, bạn có thể reset form sau khi gửi
+          messageForm.reset();
+        });
+      });
+      
+    </script>
 </body>
 <div class="floating-icon">
   <i class="fas fa-comment-alt"></i>

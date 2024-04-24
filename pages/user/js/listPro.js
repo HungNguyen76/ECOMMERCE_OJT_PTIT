@@ -127,6 +127,22 @@ const list_products = [
         des: "Để tí thêm vào nha",
         quant: "6"
     },
+    {
+        name: "Laptop MSI Cyborg 15 A12VE 240VN",
+        img: "/pages/user/image/Laptop MSI Cyborg 15 A12VE 240VN.jpg",
+        price: "22.490.000VNĐ",
+        masp: "MSI3",
+        des: "Để tí thêm vào nha",
+        quant: "35"
+    },
+    {
+        name: "Laptop ASUS Zenbook DUO UX8406MA-PZ307W",
+        img: "/pages/user/image/Laptop ASUS Zenbook DUO.webp",
+        price: "48.990.000VNĐ",
+        masp: "DUO32",
+        des: "Để tí thêm vào nha",
+        quant: "10"
+    },
 ];
 
 
