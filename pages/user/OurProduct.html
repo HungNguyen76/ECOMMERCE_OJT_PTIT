@@ -16,6 +16,15 @@
     integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
   <title>Home - Exclusive E-Commerce Website</title>
 </head>
+<style>
+  .category_name {
+    font-size: 22px;
+  }
+
+  .nav_item {
+    text-decoration: none;
+  }
+</style>
 <header>
   <nav class="nav" data-sr-id="2"
     style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
@@ -43,17 +52,12 @@
 
           <div id="myDropdown" class="dropdown-content">
             <a href="/pages/user/login.html">Log in/ Log out</a>
+            <a href="/pages/user/EditUser.html">Edit Profile</a>
+            <a href="#">Sale Product</a>
+            <a href="/pages/user/CustomerSurveyForm.html">Customer Satisfaction Survey</a>
           </div>
         </div>
       </div>
-      <span class="hamburger">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
-          </path>
-        </svg>
-      </span>
-
   </nav>
 </header>
 
@@ -69,9 +73,6 @@
 <section class="section" data-sr-id="5"
   style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
   <div class="container">
-    <div class="section_category">
-      <p class="section_category_p">categories</p>
-    </div>
     <div class="section_header">
       <h3 class="section_title">Browse by Category</h3>
     </div>
@@ -107,6 +108,15 @@
     </div>
     <div class="section_header">
       <h3 class="section_title">Products List</h3>
+      <div class="product-sorting" style="margin-left:auto; text-align: center; font-size: 14px; font-weight:bold;">
+        <label for="sort-order">Sắp xếp theo giá:</label>
+        <select id="sort-order" onchange="sortProductsByPrice(this.value)">
+          <option value="ascending" style="margin-left:auto;">Giá: Thấp đến Cao</option>
+          <option value="descending" style="margin-left:auto;">Giá: Cao đến Thấp</option>
+        </select>
+      </div>
+        </select>
+      </div>
       <p id="demo"></p>
     </div>
     <div class="products"></div>
@@ -162,5 +172,25 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="/pages/user/js/listPro.js"></script>
 <script src="/pages/user/js/renderPro.js"></script>
-<script src="/pages/user/js/homePage.js"></script>
+<script src="/pages/user/js/catagories.js"></script>
+<script>
+  function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const existingProductIndex = cart.findIndex(p => p.masp === product.masp);
+
+  if (existingProductIndex !== -1) {
+    // If the product already exists in the cart, increase the quantity by 1
+    cart[existingProductIndex].quant += 1;
+  } else {
+    // If the product is not in the cart, add it with a quantity of 1
+    product.quant = 1;
+    cart.push(product);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  console.log('Product added to cart successfully');
+}
+
+</script>
 </html>

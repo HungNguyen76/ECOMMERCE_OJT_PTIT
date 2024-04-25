@@ -25,39 +25,34 @@
           <li class="nav_item"><a href="/pages/user/homepage.html" class="nav_link">Home</a></li>
           <li class="nav_item"><a href="/pages/user/OurProduct.html" class="nav_link">Our Products</a></li>
           <li class="nav_item"><a href="/pages/user/FormContenct.html" class="nav_link">Contact Us</a></li>
+
         </ul>
         <div class="nav_items">
           <form action="#" class="nav_form">
-            <input type="text" id="searchInput" class="nav_input" placeholder="Search here...."
-              oninput="searchProducts(this.value)">
+            <input type="text" class="nav_input" placeholder="Search here....">
             <img src="/layouts/user/img/z5348968763650_8adacfd0c9a33b642767f76f50f69d0c.jpg" alt="" class="nav_search">
           </form>
           <img src="/layouts/user/img/z5348961109406_9a2ec4fcfbb760868d1ea1ac1d913208.jpg" alt="" class="nav_heart">
-          <a class="nav_cart" onclick="window.location.href='/pages/user/cart.html'">
+          <a class="nav_cart" onclick="window.location.href='./cart.html'">
             <img src="/layouts/user/img/z5348961102754_458d2d466f8d7180c1a07dbcd5565a74.jpg" alt="">
             <span id="cart_count">0</span> <!-- Thêm thẻ span để hiển thị số lượng -->
           </a>
           <div class="dropdown dropdown-click">
             <a href="/pages/user/UserPro.html"><i class="fas fa-user-circle"></i></a>
-  
+
             <div id="myDropdown" class="dropdown-content">
+              <a href="/pages/user/EditUser.html">Edit Profile</a>
+              <a href="/pages/user/CustomerSurveyForm.html">Customer Satisfaction Survey</a>
               <a href="/pages/user/login.html">Log in/ Log out</a>
             </div>
           </div>
+
         </div>
-        <span class="hamburger">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
-            </path>
-          </svg>
-        </span>
-  
     </nav>
   </header>
 
   <!-- carousel -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel_slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -82,7 +77,7 @@
   <!-- danh muc san pham -->
   <h1 class="Tittle">Laptop & Macbook</h1>
 
-  <img src="/pages/user/image/Banner 1.jpg" alt="" style="width: 1600px; height: 300px;" >
+  <img src="/pages/user/image/Banner 1.jpg" alt="" style="width: 1550px; height: 300px;">
 
 
   <div class="ProductOne">
@@ -93,7 +88,7 @@
       <div class="card-body">
         <h5 class="card-title">Dell Precision 5550 - Core i7 10750H 16GB</h5>
         <p>14.990.000VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M1', name: 'Dell Precision 5550 - Core i7 10750H 16GB', img: '/pages/user/image/45448_laptop_dell_latitude_5520_42lt552003_anphatpc.jpg', })">Add to Cart</a> 
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-1-1" type="radio" name="rating1" value="5">
@@ -115,7 +110,7 @@
       <div class="card-body">
         <h5 class="card-title">MacBook Air 13 Inch M1</h5>
         <p>17.590.000VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({Masp: 'M2', name: 'MacBook Air 13 Inch M100 CEH', img: '/pages/user/image/Mac_Air.jpg'  })">Add to Cart</a> 
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-2-1" type="radio" name="rating2" value="5">
@@ -137,7 +132,7 @@
       <div class="card-body">
         <h5 class="card-title">Laptop Lenovo V14 G3 IAP 82TS0067VN</h5>
         <p>8.990.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M3', name: 'Laptop Dell Precision 7530 Core i7-8850H',  img: '/pages/user/image/v14_den_1412dcdc644640c782821e9be102a32d_master.webp', })">Add to Cart</a> 
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-3-1" type="radio" name="rating3" value="5">
@@ -159,7 +154,7 @@
       <div class="card-body">
         <h5 class="card-title">Laptop Dell Precision 7530 Core i7-8850H</h5>
         <p>13.500.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp:'M4', name: 'Laptop Lenovo V14 G3 IAP 82TS0067VN',  img: '/pages/user/image/Laptop Dell P15 35.webp',  })">Add to Cart</a> 
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-4-1" type="radio" name="rating4" value="5">
@@ -179,7 +174,7 @@
   </div>
 
   <h1 class="Tittle">KeyBoard</h1>
-  <img class="banner1" src="/pages/user/image/Banner 2.jpg" alt="" style="height: 400px; width: 1600px;">
+  <img class="banner1" src="/pages/user/image/Banner 2.jpg" alt="" style="height: 400px; width: 1550px;">
 
   <div class="ProductOne">
 
@@ -188,7 +183,7 @@
       <div class="card-body">
         <h5 class="card-title">Bàn phím AKKO 3098 RF World Tour London</h5>
         <p>1.559.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M5', name: 'Bàn phím AKKO 3098 RF World Tour London',  img: '/pages/user/image/Bàn phím AKKO.jpg',})">Add to Cart</a> 
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-5-1" type="radio" name="rating5" value="5">
@@ -210,8 +205,10 @@
       <div class="card-body">
         <h5 class="card-title">Bàn phím AKKO 3098 RF Dracula Castle</h5>
         <p>1.759.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <!-- Pass the product details object directly to the addToCart function -->
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M6', name: 'Bàn phím AKKO 3098 RF Dracula Castle',  img: '/pages/user/image/Bàn phím Akko 3098 RF Dracula.png',})">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <!-- ... other elements ... -->
         <form class="star-rating">
           <input id="star-6-1" type="radio" name="rating5" value="5">
           <label for="star-6-1" title="5 sao">★</label>
@@ -226,13 +223,13 @@
         </form>
       </div>
     </div>
-
+    
     <div class="card" style="width: 31rem;" style="height: 32rem;">
       <img src="/pages/user/image/Bàn phím Demon Slayer.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Bàn phím AKKO 5108B Demon Slayer – Kamado Nezuko</h5>
         <p>2.959.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M8', name: 'Bàn phím Demon Slayer Kamado Nezuko',  img: '/pages/user/image/Bàn phím Demon Slayer.jpg', })">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-7-1" type="radio" name="rating5" value="5">
@@ -254,7 +251,7 @@
       <div class="card-body">
         <h5 class="card-title">Bàn phím AKKO ACR Pro Alice Plus</h5>
         <p>1.959.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M9',  name: 'Bàn phím AKKO ACR Pro Alice Plus',  img: '/pages/user/image/Bàn phím Akko ACR Pro Alice Plus.jpg', })">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-8-1" type="radio" name="rating5" value="5">
@@ -283,7 +280,7 @@
       <div class="card-body">
         <h5 class="card-title">Chuột chơi game FPS AKKO RG389 Black </h5>
         <p>899.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M12', name: 'Chuột chơi game FPS AKKO RG389 Black', img: '/pages/user/image/Chuột chơi game.jpg',})">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-9-1" type="radio" name="rating5" value="5">
@@ -305,7 +302,7 @@
       <div class="card-body">
         <h5 class="card-title">Chuột Bluetooth Logitech Pebble M350S</h5>
         <p>499.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M11',  name: 'Chuột Bluetooth Logitech Pebble M350S', img: '/pages/user/image/Chuột không dây LOGITECH PEBBLE.webp', })">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-10-1" type="radio" name="rating5" value="5">
@@ -328,7 +325,7 @@
       <div class="card-body">
         <h5 class="card-title">Chuột Không dây Gaming Razer Blasilik</h5>
         <p>1.190.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M13', name: 'Chuột Không dây Gaming Razer Blasilik', img: '/pages/user/image/Chuột Không dây Gaming Razer Basilisk X HyperSpeed.webp',})">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-11-1" type="radio" name="rating5" value="5">
@@ -350,7 +347,7 @@
       <div class="card-body">
         <h5 class="card-title">Chuột Chơi Game Razer Orochi V2</h5>
         <p>590.000 VNĐ</p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a href="#" class="btn btn-primary" onclick="addToCart({masp: 'M10', name: 'Chuột Chơi Game Razer Orochi V2',  img: '/pages/user/image/Chuột Gaming Razer Orochi V2.webp',  })">Add to Cart</a>
         <a href="#" class="btn btn-primary"><i class="fa fa-heart" aria-hidden="true"></i></a>
         <form class="star-rating">
           <input id="star-12-1" type="radio" name="rating5" value="5">
@@ -447,10 +444,9 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
     <script src="/pages/user/js/homePage.js"></script>
-    <script src="/assets/user/js/detail.js"></script>
     <script src="/pages/user/js/listPro.js"></script>
     <script src="/pages/user/js/renderPro.js"></script>
-    <script src="/assets/user/js/detail.js"></script>
+   
     <script>
       var myCarousel = document.querySelector('#carouselExampleIndicators');
       var carousel = new bootstrap.Carousel(myCarousel, {
@@ -458,11 +454,11 @@
         wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
       });
 
-      
+
       document.addEventListener("DOMContentLoaded", function () {
         const messageModal = document.getElementById("messageModal");
         const messageForm = document.getElementById("messageForm");
-      
+
         // Hiển thị modal khi nhấn vào biểu tượng tin nhắn
         const floatingIcon = document.querySelector(".floating-icon");
         floatingIcon.addEventListener("click", function () {
@@ -471,26 +467,26 @@
           });
           modal.show();
         });
-      
+
         // Xử lý khi người dùng gửi tin nhắn
         messageForm.addEventListener("submit", function (event) {
           event.preventDefault();
           const name = document.getElementById("messageName").value;
           const content = document.getElementById("messageContent").value;
-      
+
           // Ở đây bạn có thể thực hiện xử lý gửi tin nhắn, ví dụ:
           // Gửi thông tin name và content đến server
-      
+
           // Sau khi xử lý, có thể hiển thị thông báo thành công hoặc đóng modal
           alert("Message sent successfully!");
           const modal = bootstrap.Modal.getInstance(messageModal);
           modal.hide();
-      
+
           // Để tránh gửi form nhiều lần, bạn có thể reset form sau khi gửi
           messageForm.reset();
         });
       });
-      
+
     </script>
 </body>
 <div class="floating-icon">

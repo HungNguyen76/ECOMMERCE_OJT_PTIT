@@ -1,8 +1,43 @@
-// var myCarousel = document.querySelector('#carouselExampleIndicators');
-//       var carousel = new bootstrap.Carousel(myCarousel, {
-//         interval: 2000, // Thời gian chuyển đổi giữa các slide (miliseconds)
-//         wrap: true // Cho phép quay lại slide đầu khi đã chuyển qua slide cuối cùng
-//       });
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const existingProductIndex = cart.findIndex(p => p.masp === product.masp);
+
+  if (existingProductIndex !== -1) {
+    // If the product already exists in the cart, increase the quantity by 1
+    cart[existingProductIndex].quantity += 1;
+  } else {
+    // If the product is not in the cart, add it with a quantity of 1
+    product.quantity = 1;
+    cart.push(product);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  console.log('Product added to cart successfully');
+
+  // Display product name and image
+  displayProductInfo(product);
+}
+
+function displayProductInfo(product) {
+  // Assuming there's a div with id "cartItems" to display cart items
+  const cartItemsDiv = document.getElementById('cartItems');
+
+  // Create elements for product name and image
+  const productName = document.createElement('p');
+  productName.textContent = product.name;
+
+  const productImage = document.createElement('img');
+  productImage.src = product.img;
+  productImage.alt = product.name;
+  productImage.style.width = '100px'; // Adjust size as needed
+
+  // Append elements to cartItemsDiv
+  cartItemsDiv.appendChild(productName);
+  cartItemsDiv.appendChild(productImage);
+}
+
+
 
 
     //   // Load existing comments from localStorage when the page loads
@@ -113,9 +148,7 @@
     //     }
     //   }
 
-      // document.querySelector('.star-rating').addEventListener('change', function (e) {
-      //   alert('Bạn đã đánh giá ' + e.target.value + ' sao. Cảm ơn bạn đã đánh giá sản phẩm!');
-      // });
+     
 
 
       // document.addEventListener("DOMContentLoaded", function () {

@@ -30,6 +30,15 @@
 .rating-stars .star.active {
   color: gold;
 }
+.comment-buttons {
+  display: flex;
+  float: right;
+}
+
+.comment-buttons button {
+  margin-left: 5px;
+}
+
 
 </style>
 <body>
@@ -96,8 +105,8 @@
               <p id="selectedRating"></p>
             </div>
             <form id="comment-form">
-              <input type="text" id="name" placeholder="Your name" required>
-              <br>
+              <!-- <input type="text" id="name" placeholder="Your name" required>
+              <br> -->
               <textarea id="comment" placeholder="Your comment" required></textarea>
               <br>
               <button type="submit">Submit Comment</button>
@@ -156,43 +165,9 @@
         </div>
       </div>
     </footer>
-  </div>
-  
-
-  
-
-
-  
+  </div>  
   <script src="/assets/user/js/detail.js"></script>
   <script>
-    document.getElementById('comment-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const name = document.getElementById('name').value;
-  const comment = document.getElementById('comment').value;
-  const commentContainer = document.getElementById('comment-container');
-  const newComment = document.createElement('div');
-  newComment.classList.add('comment');
-
-  // Add a delete and edit button to each comment
-  newComment.innerHTML = `
-    <strong>${name}</strong>: ${comment}
-    <button onclick="editComment(this)">Edit</button>
-    <button onclick="deleteComment(this)">Delete</button>
-  `;
-
-  // Append the new comment to the "new-comment" container
-  const newCommentContainer = document.getElementById('new-comment');
-  newCommentContainer.innerHTML = '';
-  newCommentContainer.appendChild(newComment);
-
-  // Save the comment to localStorage
-  saveComment(name, comment);
-
-  // Clear the form fields
-  document.getElementById('name').value = '';
-  document.getElementById('comment').value = '';
-});
-
 const stars = document.querySelectorAll('.star');
 const selectedRating = document.getElementById('selectedRating');
 
@@ -208,6 +183,138 @@ stars.forEach(star => {
     }
   });
 });
-  </script>
+
+// Load username from localStorage when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+  loadUsername();
+});
+
+// Function to load username from localStorage
+function loadUsername() {
+  const savedName = localStorage.getItem('username');
+  if (savedName) {
+    // Hiển thị tên người dùng
+    document.getElementById('username').textContent = savedName;
+  }
+}
+
+// Save username to localStorage
+document.getElementById('comment-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  const comment = document.getElementById('comment').value;
+  const commentContainer = document.getElementById('comment-container');
+  const newComment = document.createElement('div');
+  newComment.classList.add('comment');
+
+  // Lấy tên người dùng từ localStorage
+  const name = localStorage.getItem('username') || 'Guest';
+
+  // Add a delete and edit button to each comment
+  newComment.innerHTML = `
+    <strong>${name}</strong>: ${comment}
+    <div class="comment-buttons">
+      <button onclick="editComment(this)">Edit</button>
+      <button onclick="deleteComment(this)">Delete</button>
+    </div>
+  `;
+
+  commentContainer.appendChild(newComment);
+
+  // Clear the comment input field
+  document.getElementById('comment').value = '';
+});
+
+// Function to save a comment and username to localStorage
+function saveComment(name, comment) {
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.push({ name: name, comment: comment });
+  localStorage.setItem('comments', JSON.stringify(comments));
+
+  // Save username to localStorage if it's not already saved
+  if (!localStorage.getItem('username')) {
+    localStorage.setItem('username', name);
+  }
+}
+
+
+// Function to delete a comment
+function deleteComment(button) {
+  // Remove the comment div
+  button.parentElement.remove();
+  // Remove the comment from localStorage
+  removeComment(button.parentElement.querySelector('strong').textContent.trim());
+}
+
+// Function to edit a comment
+function editComment(button) {
+  const commentText = button.parentElement.querySelector('strong').nextSibling.nodeValue.trim();
+  const newName = prompt('Edit your name:', button.parentElement.querySelector('strong').textContent);
+  const newComment = prompt('Edit your comment:', commentText);
+
+  if (newName !== null && newComment !== null) {
+    button.parentElement.querySelector('strong').textContent = newName;
+    button.parentElement.querySelector('strong').nextSibling.nodeValue = newComment;
+    // Update the comment in localStorage
+    updateComment(newName, newComment, button.parentElement);
+  }
+}
+
+// Function to save a comment to localStorage
+function saveComment(name, comment) {
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.push({ name: name, comment: comment });
+  localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+// Function to load comments from localStorage
+function loadComments() {
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  const commentContainer = document.getElementById('comment-container');
+  comments.forEach(function (item) {
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment');
+    newComment.innerHTML = `<strong>${item.name}</strong>: ${item.comment}<button onclick="editComment(this)">Edit</button><button onclick="deleteComment(this)">Delete</button>`;
+    commentContainer.appendChild(newComment);
+  });
+}
+
+// Function to remove a comment from localStorage
+function removeComment(name) {
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments = comments.filter(item => item.name !== name);
+  localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+// Function to update a comment in localStorage
+function updateComment(name, comment, element) {
+  let comments = JSON.parse(localStorage.getItem('comments')) || [];
+  comments.forEach(item => {
+    if (item.name === name) {
+      item.comment = comment;
+    }
+  });
+  localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+// Update the function name to avoid conflicts
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
 </body>
 </html>

@@ -1,172 +1,157 @@
 .carousel-item img {
-    max-width: 400%;
-    height: auto;
+  max-width: 400%;
+  height: auto;
 
-  }
-
-  .carousel-inner {
-    max-width: 1600px;
-    height: 700px;
-  }
-
-  .ProductOne {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
-    margin-right: 20px;
-
-  }
-
-  .nav_link,
-  .nav_logo,
-  .footer_logo {
-    text-decoration: none;
-  }
-
-  #comment-form {
-    max-width: 840px;
-    /* Đặt chiều rộng tối đa của form comment */
-    margin: 0 auto;
-    /* Đưa form comment vào giữa trang */
-    padding: 20px;
-    /* Tạo khoảng cách giữa các phần tử trong form */
-    border: 1px solid #ccc;
-    /* Tạo viền xung quanh form */
-    border-radius: 8px;
-    /* Làm cong viền của form */
-    background-color: #f9f9f9;
-    /* Màu nền của form */
-  }
-
-  #comment-form input,
-  #comment-form textarea,
-  #comment-form button {
-    width: 100%;
-    /* Đặt chiều rộng của input, textarea, và button là 100% */
-    margin-bottom: 10px;
-    /* Tạo khoảng cách giữa các phần tử */
-  }
-
-  #comment-form button {
-    background-color: #007bff;
-    /* Màu nền của nút Submit Comment */
-    color: #fff;
-    /* Màu chữ của nút */
-    border: gray;
-    /* Loại bỏ viền của nút */
-    padding: 10px;
-    /* Tạo khoảng cách giữa viền và nội dung của nút */
-    cursor: pointer;
-    /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
-  }
-
-  #comment-container {
-    max-width: 600px;
-    /* Đặt chiều rộng tối đa của container chứa các comment */
-    margin: 20px auto;
-    /* Đưa container vào giữa trang */
-  }
-
-  .comment {
-    margin-bottom: 10px;
-    /* Tạo khoảng cách giữa các comment */
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-top: 15px;
-    border-left: 3px solid #0056b3;
-    border-radius: 15px;
-  }
-
-  .comment button {
-    background-color: #dc3545;
-    /* Màu nền của nút Delete */
-    color: #fff;
-    /* Màu chữ của nút */
-    border: none;
-    /* Loại bỏ viền của nút */
-    padding: 5px 10px;
-    /* Tạo khoảng cách giữa viền và nội dung của nút */
-    cursor: pointer;
-    /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
-  }
-
-  .text {
-    font-size: 14px;
-  }
-
-  .card {
-    position: relative;
-    /* Đảm bảo hiệu ứng sẽ hoạt động chính xác */
-    overflow: hidden;
-    /* Ẩn phần nội dung vượt ra khỏi card khi hiệu ứng blur được áp dụng */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Thêm hiệu ứng chuyển động mềm mại */
-    padding: 20px;
-    cursor: pointer;
-  }
-
-  .card:hover {
-    transform: scale(1.05);
-    /* Phóng to card khi di chuột vào */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    /* Áp dụng đổ bóng để tạo hiệu ứng blur */
-  }
-
-
-  
-  .star-rating {
-    direction: rtl;
-    display: inline-flex;
-    padding: 20px;
-  }
-  .star-rating input[type="radio"] {
-    display: none;
-  }
-  .star-rating label {
-    color: #bbb;
-    font-size: 18px;
-    padding: 0;
-    cursor: pointer;
-    -webkit-transition: color 0.2s;
-    transition: color 0.2s;
-  }
-  .star-rating label:hover,
-  .star-rating label:hover ~ label,
-  .star-rating input[type="radio"]:checked ~ label {
-    color: #f0ad4e;
-  }
-
-
-
-  .btn-group {
-    display: flex;
-    justify-content: space-between; /* Distribute items evenly along the main axis */
-    margin-top: 3px;
-  }
-  
-  a.btn {
-    flex: 1; /* Distribute available space equally among items */
-    border-radius: 12px;
-    border: 3px solid;
-    padding: 0.8rem 2.4rem;
-    transition: background-color 0.5s ease;
-    text-align: center;
-    font-weight: bold;
-    background-color: #f5f5f5;
-    border-color: black;
-    color: black;
-  }
-  
-  a.btn:hover {
-    background-color: black;
-  }
-  
-.Tittle {
-  text-align: center;
-  font-size: 34px;
 }
 
-.wishlist_btn {
+.carousel-inner {
+  max-width: 1600px;
+  height: 700px;
+  margin-bottom: 100px;
+}
+
+.ProductOne {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-right: 20px;
+
+}
+
+.nav_link,
+.nav_logo,
+.footer_logo {
+  text-decoration: none;
+}
+
+#comment-form {
+  max-width: 840px;
+  /* Đặt chiều rộng tối đa của form comment */
+  margin: 0 auto;
+  /* Đưa form comment vào giữa trang */
+  padding: 20px;
+  /* Tạo khoảng cách giữa các phần tử trong form */
+  border: 1px solid #ccc;
+  /* Tạo viền xung quanh form */
+  border-radius: 8px;
+  /* Làm cong viền của form */
+  background-color: #f9f9f9;
+  /* Màu nền của form */
+}
+
+#comment-form input,
+#comment-form textarea,
+#comment-form button {
+  width: 100%;
+  /* Đặt chiều rộng của input, textarea, và button là 100% */
+  margin-bottom: 10px;
+  /* Tạo khoảng cách giữa các phần tử */
+}
+
+#comment-form button {
+  background-color: black;
+  /* Màu nền của nút Submit Comment */
+  color: #fff;
+  /* Màu chữ của nút */
+  border: gray;
+  /* Loại bỏ viền của nút */
+  padding: 10px;
+  /* Tạo khoảng cách giữa viền và nội dung của nút */
+  cursor: pointer;
+  /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
+  border-radius: 10px;
+}
+#comment-form button:hover {
+  background-color: white;
+  color: black;
+}
+
+#comment-container {
+  max-width: 600px;
+  /* Đặt chiều rộng tối đa của container chứa các comment */
+  margin: 20px auto;
+  /* Đưa container vào giữa trang */
+}
+
+.comment {
+  margin-bottom: 10px;
+  /* Tạo khoảng cách giữa các comment */
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-top: 15px;
+  border-left: 3px solid black;
+  border-radius: 4px;
+}
+
+.comment button {
+  background-color: black;
+  /* Màu nền của nút Delete */
+  color: #fff;
+  /* Màu chữ của nút */
+  border: none;
+  /* Loại bỏ viền của nút */
+  padding: 5px 10px;
+  /* Tạo khoảng cách giữa viền và nội dung của nút */
+  cursor: pointer;
+  /* Biến con trỏ thành hình bàn tay khi di chuột vào nút */
+  border-radius: 10px;
+}
+
+.text {
+  font-size: 14px;
+}
+
+.card {
+  position: relative;
+  /* Đảm bảo hiệu ứng sẽ hoạt động chính xác */
+  overflow: hidden;
+  /* Ẩn phần nội dung vượt ra khỏi card khi hiệu ứng blur được áp dụng */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Thêm hiệu ứng chuyển động mềm mại */
+  padding: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  /* Phóng to card khi di chuột vào */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  /* Áp dụng đổ bóng để tạo hiệu ứng blur */
+}
+
+
+
+.star-rating {
+  direction: rtl;
+  display: inline-flex;
+  padding: 20px;
+}
+.star-rating input[type="radio"] {
+  display: none;
+}
+.star-rating label {
+  color: #bbb;
+font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+  color: #f0ad4e;
+}
+
+
+
+.btn-group {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  margin-top: 3px;
+}
+
+a.btn {
   flex: 1; /* Distribute available space equally among items */
   border-radius: 12px;
   border: 3px solid;
@@ -179,36 +164,72 @@
   color: black;
 }
 
-.wishlist_btn:hover {
+a.btn:hover {
   background-color: black;
-  color: white;
+  border-color: #161414;
+}
+
+.Tittle {
+text-align: center;
+font-size: 34px;
+margin-bottom: 20px;
+font-weight: bold;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+display:flex;
+justify-content: center;
+border:#161414 4px solid;
+width: 40%; 
+
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.wishlist_btn {
+flex: 1; /* Distribute available space equally among items */
+border-radius: 12px;
+border: 3px solid;
+padding: 0.8rem 2.4rem;
+transition: background-color 0.5s ease;
+text-align: center;
+font-weight: bold;
+background-color: #f5f5f5;
+border-color: black;
+color: black;
+}
+
+.wishlist_btn:hover {
+background-color: black;
+color: white;
 } 
-  
+
 
 
 /* CSS */
-  .floating-icon {
-    position: fixed;
-    bottom: 20px; /* Điều chỉnh khoảng cách dưới (bottom) tùy ý */
-    right: 20px; /* Điều chỉnh khoảng cách bên trái (left) tùy ý */
-    background-color: black; /* Màu nền của icon */
-    color: white; /* Màu icon */
-    width: 50px; /* Chiều rộng của icon */
-    height: 50px; /* Chiều cao của icon */
-    border-radius: 50%; /* Tạo hình tròn */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000; /* Đặt z-index để icon hiển thị trên các phần khác */
-    transition: background-color 0.3s ease;
-  }
+.floating-icon {
+  position: fixed;
+  bottom: 20px; /* Điều chỉnh khoảng cách dưới (bottom) tùy ý */
+  right: 20px; /* Điều chỉnh khoảng cách bên trái (left) tùy ý */
+  background-color: black; /* Màu nền của icon */
+  color: white; /* Màu icon */
+  width: 50px; /* Chiều rộng của icon */
+  height: 50px; /* Chiều cao của icon */
+  border-radius: 50%; /* Tạo hình tròn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000; /* Đặt z-index để icon hiển thị trên các phần khác */
+  transition: background-color 0.3s ease;
+}
 
-  .floating-icon:hover {
-    background-color: white; /* Màu nền khi hover */
-    color: black
-  }
+.floating-icon:hover {
+  background-color: white; /* Màu nền khi hover */
+  color: black
+}
 
-  .floating-icon i {
-    font-size: 24px; /* Kích thước của icon */
-  }
+.floating-icon i {
+  font-size: 24px; /* Kích thước của icon */
+}
+
+.carousel_slide {
+  margin-top: 100px;
+}
