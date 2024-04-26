@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/layouts/user/css/header.css" />
+<link rel="stylesheet" href="/layouts/user/css/styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<title>Customer Survey Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  .survey-container {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .form-group input[type="submit"] {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .form-group input[type="submit"]:hover {
+    background-color: white;
+    color: black
+  }
+  .nav_item {
+    text-decoration: none; /* Bỏ dấu gạch ngang */
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav" data-sr-id="2"
+  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+  <div class="container nav_container">
+      <a href="/pages/user/homepage.html" class="nav_logo">Pro PC</a>
+      <ul class="nav_list">
+          <li class="nav_item"><a href="/pages/user/homepage.html" class="nav_link">Home</a></li>
+          <li class="nav_item"><a href="/pages/user/OurProduct.html" class="nav_link">Our Products</a></li>
+          <li class="nav_item"><a href="/pages/user/FormContenct.html" class="nav_link">Contact Us</a></li>
+
+      </ul>
+      <div class="nav_items">
+          <form action="#" class="nav_form">
+              <input type="text" class="nav_input" placeholder="Search here....">
+              <img src="/layouts/user/img/z5348968763650_8adacfd0c9a33b642767f76f50f69d0c.jpg" alt=""
+                  class="nav_search">
+          </form>
+          <img src="/layouts/user/img/z5348961109406_9a2ec4fcfbb760868d1ea1ac1d913208.jpg" alt=""
+              class="nav_heart">
+          <a class="nav_cart" onclick="window.location.href='./cart.html'">
+              <img src="/layouts/user/img/z5348961102754_458d2d466f8d7180c1a07dbcd5565a74.jpg" alt="">
+              <span id="cart_count">0</span> <!-- Thêm thẻ span để hiển thị số lượng -->
+          </a>
+          <div class="dropdown dropdown-click">
+              <a href="/pages/user/UserPro.html"><i class="fas fa-user-circle"></i></a>
+
+              <div id="myDropdown" class="dropdown-content">
+                  <a href="/pages/user/login.html">Log in/ Log out</a>
+              </div>
+          </div>
+           <div class="dropdown dropdown-click">
+                  <a href="javascript:void(0)" onclick="toggleDropdown()" class="dropbtn">
+                      <i class="fas fa-bars"></i>
+                      <div id="menuDropdown" class="dropdown-content">
+                          <a href="/pages/user/EditUser.html">Edit Profile</a>
+                          <a href="#">Sale Product</a>
+                          <a href="#">Consulting support</a>
+                      </div>
+                  </a>
+              </div>
+      </div>
+</nav>
+</header>
+
+
+<div class="survey-container">
+  <h1>Customer Satisfaction Survey</h1>
+  <p>Please take a moment to fill out our survey.</p>
+  <form id="survey-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="product">Product Purchased:</label>
+      <select id="product" name="product">
+        <option value="laptop">Laptop</option>
+        <option value="keyboard">Keyboard</option>
+        <option value="mouse">Mouse</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="product-name">Specific Product Name:</label>
+      <input type="text" id="product-name" name="product-name" required>
+    </div>
+    <div class="form-group">
+      <label for="satisfaction">Satisfaction Level:</label>
+      <select id="satisfaction" name="satisfaction">
+        <option value="very_satisfied">Very Satisfied</option>
+        <option value="satisfied">Satisfied</option>
+        <option value="neutral">Neutral</option>
+        <option value="dissatisfied">Dissatisfied</option>
+        <option value="very_dissatisfied">Very Dissatisfied</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="comments">Additional Comments:</label>
+      <textarea id="comments" name="comments" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Submit Survey">
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('survey-form').onsubmit = function(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var product = document.getElementById('product').value;
+    var satisfaction = document.getElementById('satisfaction').value;
+    var comments = document.getElementById('comments').value;
+    
+    // Basic validation
+    if(name && email && product && satisfaction) {
+      alert('Thank you for completing the survey!');
+      // Here you can add code to handle the form data, like sending it to a server
+    } else {
+      alert('Please fill out all required fields.');
+    }
+  };
+
+  // Get the form element
+  const surveyForm = document.getElementById('survey-form');
+
+  // Add an event listener for form submission
+  surveyForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form field values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const product = document.getElementById('product').value;
+    const satisfaction = document.getElementById('satisfaction').value;
+    const comments = document.getElementById('comments').value;
+    const productName = document.getElementById('product-name').value;
+
+    // Create an object to store the data
+    const surveyData = {
+      name,
+      email,
+      product,
+      satisfaction,
+      comments,
+      productName
+    };
+
+    // Save data to local storage
+    localStorage.setItem('customerSurvey', JSON.stringify(surveyData));
+
+    // Display a success message (you can customize this)
+    alert('Thank you for completing the survey! Your data has been saved.');
+
+    // Optionally, you can redirect the user to another page
+    // window.location.href = 'thank-you.html';
+  });
+</script>
+</body>
+</html>
