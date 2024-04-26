@@ -38,6 +38,22 @@
 .comment-buttons button {
   margin-left: 5px;
 }
+.dropdown-content {
+  z-index: 999999; /* hoặc một giá trị cao hơn nếu cần */
+}
+.dropdown {
+  position: relative;
+}
+.dropdown {
+  overflow: visible; /* hoặc overflow: visible !important; nếu cần thiết */
+}
+
+.nav-detail {
+  height: 14rem;
+}
+.chu {
+font-size: 8px;
+}
 
 
 </style>
@@ -45,7 +61,7 @@
   
   <div id="productDetailModal" class="modal">
     <header>
-      <nav class="nav" data-sr-id="2"
+      <nav class="nav nav-detail" data-sr-id="2"
         style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
         <div class="container nav_container">
           <a href="/pages/user/homepage.html" class="nav_logo">Pro PC</a>
@@ -69,7 +85,9 @@
               <a href="/pages/user/UserPro.html"><i class="fas fa-user-circle"></i></a>
     
               <div id="myDropdown" class="dropdown-content">
-                <a href="/pages/user/login.html">Log in/ Log out</a>
+              <a class="chu" href="/pages/user/EditUser.html">Edit Profile</a>
+              <a class="chu" href="/pages/user/CustomerSurveyForm.html">Customer Satisfaction Survey</a>
+              <a class="chu" href="/pages/user/login.html">Log in/ Log out</a>
               </div>
             </div>
           </div>
@@ -105,8 +123,6 @@
               <p id="selectedRating"></p>
             </div>
             <form id="comment-form">
-              <!-- <input type="text" id="name" placeholder="Your name" required>
-              <br> -->
               <textarea id="comment" placeholder="Your comment" required></textarea>
               <br>
               <button type="submit">Submit Comment</button>
@@ -297,23 +313,23 @@ function updateComment(name, comment, element) {
 }
 
 // Update the function name to avoid conflicts
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+// function myFunction() {
+//   document.getElementById("myDropdown").classList.toggle("show");
+// }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+// window.onclick = function (event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       // if (openDropdown.classList.contains('show')) {
+//       //   openDropdown.classList.remove('show');
+//       // }
+//     }
+//   }
+// }
 
 </script>
 </body>

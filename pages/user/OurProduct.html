@@ -174,22 +174,69 @@
 <script src="/pages/user/js/renderPro.js"></script>
 <script src="/pages/user/js/catagories.js"></script>
 <script>
-  function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+ // Function to add a product to the cart
+ function addToCart(productId) {
+    // Retrieve the existing cart from local storage or create an empty one if it doesn't exist
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-  const existingProductIndex = cart.findIndex(p => p.masp === product.masp);
+    // Retrieve the product details
+    let product = getProductById(productId);
 
-  if (existingProductIndex !== -1) {
-    // If the product already exists in the cart, increase the quantity by 1
-    cart[existingProductIndex].quant += 1;
-  } else {
-    // If the product is not in the cart, add it with a quantity of 1
-    product.quant = 1;
-    cart.push(product);
-  }
+    // Increment the quantity of the product in the cart, or set it to 1 if it's not already in the cart
+    cart[productId] = cart[productId] ? cart[productId] + 1 : 1;
 
-  localStorage.setItem('cart', JSON.stringify(cart));
-  console.log('Product added to cart successfully');
+    // Add product details to cart
+    cart[productId] = {
+        masp: productId,
+        name: product.name,
+        img: product.img,
+        quantity: cart[productId]
+    };
+
+    // Save the updated cart back to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
+// Function to add a product to the wishlist
+function addToWishlist(productId) {
+    // Retrieve the existing wishlist from local storage or create an empty one if it doesn't exist
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Retrieve the product details
+    let product = getProductById(productId);
+
+    // Check if the product is already in the wishlist
+    const existingItem = wishlist.find(item => item.masp === productId);
+    if (!existingItem) {
+        // Add the product to the wishlist if it's not already there
+        wishlist.push({
+            masp: productId,
+            name: product.name,
+            img: product.img,
+            quantity: 1
+        });
+
+        // Save the updated wishlist back to local storage
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    } else {
+        // If the product is already in the wishlist, increment its quantity
+        existingItem.quantity++;
+        // Save the updated wishlist back to local storage
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    }
+}
+
+
+
+
+// Function to retrieve product details by ID
+function getProductById(productId) {
+    // Retrieve the list of products from local storage or use a default list if it doesn't exist
+    let listProducts = getListProducts() || list_products;
+
+    // Find the product with the given ID
+    return listProducts.find(product => product.masp === productId);
 }
 
 </script>

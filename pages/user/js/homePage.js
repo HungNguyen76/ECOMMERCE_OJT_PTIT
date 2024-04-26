@@ -39,6 +39,48 @@ function displayProductInfo(product) {
 
 
 
+function addToWishlist(product) {
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  const existingProductIndex = wishlist.findIndex(p => p.masp === product.masp);
+
+  if (existingProductIndex !== -1) {
+    // If the product already exists in the cart, increase the quantity by 1
+    wishlist[existingProductIndex].quantity += 1;
+  } else {
+    // If the product is not in the cart, add it with a quantity of 1
+    product.quantity = 1;
+    wishlist.push(product);
+  }
+
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  console.log('Product added to wishlist successfully');
+
+  // Display product name and image
+  displayWishlistInfo(product);
+}
+
+
+function displayWishlistInfo(product) {
+  // Assuming there's a div with id "wishlistItems" to display wishlist items
+  const wishlistItemsDiv = document.getElementById('wishlistItems');
+
+  // Create elements for product name and image
+  const productName = document.createElement('p');
+  productName.textContent = product.name;
+
+  const productImage = document.createElement('img');
+  productImage.src = product.img;
+  productImage.alt = product.name;
+  productImage.style.width = '100px'; // Adjust size as needed
+
+  // Append elements to wishlistItemsDiv
+  wishlistItemsDiv.appendChild(productName);
+  wishlistItemsDiv.appendChild(productImage);
+}
+
+
+
 
     //   // Load existing comments from localStorage when the page loads
     //   document.addEventListener('DOMContentLoaded', function () {
