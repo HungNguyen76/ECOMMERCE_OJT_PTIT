@@ -205,7 +205,27 @@
                     <th style="width: 10%">Status</th>
                 </tr>
             </table>
-
+        <!-- Phân quyền người dùng -->
+        <div id="phanQuyenModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('phanQuyenModal').style.display='none'">&times;</span>
+                <h2>Phân quyền người dùng</h2>
+                <form>
+                    <label for="phanQuyenUser">Chọn người dùng:</label>
+                    <select id="phanQuyenUser" name="phanQuyenUser">
+                        <option value="">-- Chọn người dùng --</option>
+                    </select>
+                    <br>
+                    <label for="quyenUser">Quyền:</label>
+                    <select id="quyenUser" name="quyenUser">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <br>
+                    <button type="button" onclick="phanQuyenUser()">Update</button>
+                </form>
+            </div>
+        </div>
             <div class="table-content">
             </div>
 
