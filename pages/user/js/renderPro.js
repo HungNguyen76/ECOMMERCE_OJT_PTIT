@@ -38,5 +38,3 @@ function renderListProducts(listProducts) {
 
   document.querySelector(".products").innerHTML = result;
 }
-
-

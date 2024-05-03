@@ -306,17 +306,17 @@ function addProduct() {
 }
 
 // Create Product code
-function autoMaProduct(company) {
+// function autoMaProduct(company) {
     
-    if (!company) company = document.getElementsByName('type')[0].value;
-    var index = 0;
-    for (var i = 0; i < list_products.length; i++) {
-        if (list_products[i].type == type) {
-            index++;
-        }
-    }
-    document.getElementById('maspThem').value = type.substring(0, 3) + index;
-}
+//     if (!company) company = document.getElementsByName('type')[0].value;
+//     var index = 0;
+//     for (var i = 0; i < list_products.length; i++) {
+//         if (list_products[i].type == type) {
+//             index++;
+//         }
+//     }
+//     document.getElementById('maspThem').value = type.substring(0, 3) + index;
+// }
 
 // Delete
 function deleteProduct(masp, tensp) {
@@ -643,15 +643,79 @@ function getValueOfTypeInTable_Order(tr, loai) {
     return false;
 }
 
-// ====================== User =============================
+// ====================== Admin ============================= //
+var adminInfo = [{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}];
+var adminInfoString = JSON.stringify(adminInfo);
+
+localStorage.setItem('adminLists', adminInfoString);
+
+function phanQuyenUser() {
+    const userSelect = document.getElementById('phanQuyenUser');
+    const quyenSelect = document.getElementById('quyenUser');
+    const tenUser = userSelect.value;
+    const quyenMoi = quyenSelect.value;
+
+    if (!tenUser) {
+        alert('Vui lòng chọn người dùng để phân quyền.');
+        return;
+    }
+
+    let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
+    let user = listUser.find(u => u.name === tenUser);
+
+    if (!user) {
+        alert('Không tìm thấy người dùng.');
+        return;
+    }
+
+    // Cập nhật quyền mới cho người dùng
+    user.role = quyenMoi;
+
+    // Lưu danh sách người dùng đã cập nhật
+    localStorage.setItem('ListUser', JSON.stringify(listUser));
+
+    // Nếu phân quyền người dùng thành admin, thêm thông tin admin vào danh sách adminLists
+    if (quyenMoi === 'admin') {
+        let adminLists = JSON.parse(localStorage.getItem('adminLists')) || [];
+        let existingAdmin = adminLists.find(admin => admin.email === user.email);
+
+        if (!existingAdmin) {
+            adminLists.push({ email: user.email, password: user.password });
+            localStorage.setItem('adminLists', JSON.stringify(adminLists));
+        }
+    }
+
+    alert(`Phân quyền ${quyenMoi} cho người dùng ${user.name} thành công.`);
+    document.getElementById('phanQuyenModal').style.display = 'none';
+    addTableKhachHang(); // Cập nhật lại bảng người dùng
+    loadUsersToSelect(); // Tải lại danh sách người dùng trong select
+}
+
+function loadUsersToSelect() {
+    const userSelect = document.getElementById('phanQuyenUser');
+    let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
+
+    // Xóa tất cả các option hiện có
+    userSelect.innerHTML = '<option value="">-- Chọn người dùng --</option>';
+
+    // Thêm các option mới từ danh sách người dùng
+    listUser.forEach(user => {
+        const option = document.createElement('option');
+        option.value = user.name;
+        option.textContent = user.name;
+        userSelect.appendChild(option);
+    });
+}
+
 // Draw table
 function addTableKhachHang() {
     var tc = document.getElementsByClassName('khachhang')[0].getElementsByClassName('table-content')[0];   
-    console.log("tc",tc)
     var s = `<table class="table-outline hideImg">`;
 
-    var listUser = getListUser();
-    console.log("listUser", listUser)
+    let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
 
     for (var i = 0; i < listUser.length; i++) {
         var u = listUser[i];
@@ -700,77 +764,6 @@ function timKiemUser(inp) {
         }
     }
 }
-// Open User
-function openThemUser() {
-    // Tạo phần tử modal
-    var modal = document.createElement('div');
-    modal.className = 'modal';
-
-    // Nội dung của modal
-    var modalContent = `
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Tạo tài khoản mới</h2>
-            <form>
-                <label for="name">Tên:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" required>
-
-                <button type="submit">Tạo tài khoản</button>
-            </form>
-        </div>
-    `;
-    modal.innerHTML = modalContent;
-
-    // Thêm event listener cho nút đóng modal
-    var closeBtn = modal.querySelector('.close');
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    // Thêm event listener cho form submit
-    var form = modal.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Ngăn chặn reload trang
-
-        // Lấy dữ liệu từ form
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-
-        // Tạo id ngẫu nhiên
-        var id = generateId(8);
-
-        // Tạo đối tượng người dùng mới
-        var newUser = {
-            id: id,
-            name: name,
-            email: email,
-            password: password,
-            off: false
-        };
-
-        // Thêm người dùng mới vào danh sách
-        var listUser = getListUser();
-        listUser.push(newUser);
-        setListUser(listUser);
-
-        // Đóng modal và cập nhật bảng
-        modal.style.display = 'none';
-        addTableKhachHang();
-    });
-
-    // Thêm modal vào document
-    document.body.appendChild(modal);
-
-    // Hiển thị modal
-    modal.style.display = 'block';
-}
 
 // Hàm tạo ID ngẫu nhiên
 function generateId(length) {
@@ -792,6 +785,89 @@ function getListUser() {
     }
     return l;
 }
+
+// Hàm kiểm tra email
+function validateEmail(email) {
+    var listUser = getListUser();
+    for (var i = 0; i < listUser.length; i++) {
+        if (listUser[i].email === email) {
+            alert('Email đăng ký đã tồn tại');
+            return false;
+        }
+    }
+    return true;
+}
+
+// Hàm mở modal
+function openThemUser() {
+    var modal = document.createElement('div');
+    modal.className = 'modal';
+
+    var modalContent = `
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Tạo tài khoản mới</h2>
+            <form id="userForm">
+                <label for="name">Tên:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Tạo tài khoản</button>
+                <button id="cancelUserFormBtn" class="cancel-user-form-btn">Hủy</button>
+            </form>
+        </div>
+    `;
+    modal.innerHTML = modalContent;
+
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+
+    var form = document.getElementById('userForm');
+    if (!form) {
+        alert('Không tìm thấy form');
+        return;
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+    
+        if (!validateEmail(email)) {
+            return;
+        }
+    
+        var id = generateId(8);
+    
+        var newUser = {
+            id: id,
+            name: name,
+            email: email,
+            password: password,
+            off: false
+        };
+    
+        var listUser = getListUser();
+        listUser.push(newUser);
+        window.localStorage.setItem('ListUser', JSON.stringify(listUser));
+    
+        modal.style.display = 'none';
+        addTableKhachHang();
+    });
+
+    var closeBtn = document.querySelector('.modal .close');
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+}
+
 
 // Disable user
 function voHieuHoaUser(inp, account) {

@@ -55,191 +55,199 @@
           <div id="myDropdown" class="dropdown-content">
             <a href="/pages/user/login.html">Log in/ Log out</a>
             <a href="/pages/user/EditUser.html">Edit Profile</a>
-            <a href="#">Sale Product</a>
             <a href="/pages/user/CustomerSurveyForm.html">Customer Satisfaction Survey</a>
           </div>
         </div>
       </div>
   </nav>
-</header>
 
-<header class="header" data-sr-id="3"
-  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 0.6s cubic-bezier(0.5, 0, 0, 1) 0.2s;">
+  <section class="section" data-sr-id="4"
+    style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
 
-</header>
-
-<section class="section" data-sr-id="4"
-  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-
-</section>
-<section class="section" data-sr-id="5"
-  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-  <div class="container">
-    <div class="section_header">
-      <h3 class="section_title">Browse by Category</h3>
-    </div>
-
-    <div class="categories">
-      <div class="category">
-        <i class="fa fa-laptop" aria-hidden="true"></i>
-        <p class="category_name">Laptop&Macbook</p>
+  </section>
+  <section class="section" data-sr-id="5"
+    style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+    <div class="container">
+      <div class="section_header">
+        <h3 class="section_title">Browse by Category</h3>
       </div>
 
-      <div class="category">
-        <i class="fa fa-keyboard" aria-hidden="true"></i>
-        <p class="category_name">Keyboard</p>
-      </div>
+      <div class="categories">
+        <div class="category">
+          <i class="fa fa-laptop" aria-hidden="true"></i>
+          <p class="category_name">Laptop&Macbook</p>
+        </div>
 
-      <div class="category">
-        <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
-        <p class="category_name">Mouse</p>
+        <div class="category">
+          <i class="fa fa-mouse-pointer" aria-hidden="true"></i>
+          <p class="category_name">Mouse</p>
+        </div>
+
+        <div class="category">
+          <i class="fa fa-keyboard" aria-hidden="true"></i>
+          <p class="category_name">KeyBoard</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  </div>
-  </div>
-
-</section>
-
-<section class="section" data-sr-id="8"
-  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-  <div class="container">
-    <div class="section_category">
-      <p class="section_category_p" onclick="renderListProducts()">Our Products</p>
     </div>
-    <div class="section_header">
-      <h3 class="section_title">Products List</h3>
-      <div class="product-sorting" style="margin-left:auto; text-align: center; font-size: 14px; font-weight:bold;">
-        <label for="sort-order">Sắp xếp theo giá:</label>
-        <select id="sort-order" onchange="sortProductsByPrice(this.value)">
-          <option value="ascending" style="margin-left:auto;">Giá: Thấp đến Cao</option>
-          <option value="descending" style="margin-left:auto;">Giá: Cao đến Thấp</option>
-        </select>
+    </div>
+
+  </section>
+
+  <section class="section" data-sr-id="8"
+    style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p" onclick="renderListProducts()">Our Products</p>
       </div>
+      <div class="section_header">
+        <h3 class="section_title">Products List</h3>
+        <div class="product-sorting" style="margin-left:auto; text-align: center; font-size: 14px; font-weight:bold;">
+          <label for="sort-order">Sắp xếp theo giá:</label>
+          <select id="sort-order" onchange="sortProductsByPrice(this.value)">
+            <option value="ascending" style="margin-left:auto;">Giá: Thấp đến Cao</option>
+            <option value="descending" style="margin-left:auto;">Giá: Cao đến Thấp</option>
+          </select>
+        </div>
         </select>
       </div>
       <p id="demo"></p>
     </div>
     <div class="products"></div>
-</section>
-</body>
+  </section>
+  </body>
 
-<footer class="footer" data-sr-id="11"
-  style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
-  <div class="container footer_container">
-    <div class="footer_item">
-      <a href="/pages/user/homepage.html" class="footer_logo">PC Pro</a>
-      <p class="text">At PC Pro we guarantee IT and network security.<br>
-        We supply old and new products with high quality <br>
-      </p>
-      <div class="footer_p">
+  <footer class="footer" data-sr-id="11"
+    style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 1s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 1s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+    <div class="container footer_container">
+      <div class="footer_item">
+        <a href="/pages/user/homepage.html" class="footer_logo">PC Pro</a>
+        <p class="text">At PC Pro we guarantee IT and network security.<br>
+          We supply old and new products with high quality <br>
+        </p>
+        <div class="footer_p">
+        </div>
+      </div>
+      <div class="footer_item">
+        <h3 class="footer_item_titl">Contact</h3>
+        <ul class="footer_list">
+          <li class="li footer_list_item">Stockholm, Sweden</li>
+          <li class="li footer_list_item">email@gmail.com</li>
+          <li class="li footer_list_item">+46 123 456 78</li>
+          <li class="li footer_list_item">+46 72 345 67</li>
+          <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </ul>
+      </div>
+      <div class="footer_item">
+        <h3 class="footer_item_titl">Support</h3>
+        <ul class="footer_list">
+          <li class="li footer_list_item">Account</li>
+          <li class="li footer_list_item">Login / Register</li>
+          <li class="li footer_list_item">Cart</li>
+          <li class="li footer_list_item">Shop</li>
+        </ul>
+      </div>
+      <div class="footer_item">
+        <h3 class="footer_item_titl">Privacy</h3>
+        <ul class="footer_list">
+          <li class="li footer_list_item">Privacy policy</li>
+          <li class="li footer_list_item">Terms of use</li>
+          <li class="li footer_list_item">FAQ's</li>
+          <li class="li footer_list_item">Contact</li>
+        </ul>
       </div>
     </div>
-    <div class="footer_item">
-      <h3 class="footer_item_titl">Contact</h3>
-      <ul class="footer_list">
-        <li class="li footer_list_item">Stockholm, Sweden</li>
-        <li class="li footer_list_item">email@gmail.com</li>
-        <li class="li footer_list_item">+46 123 456 78</li>
-        <li class="li footer_list_item">+46 72 345 67</li>
-        <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      </ul>
-    </div>
-    <div class="footer_item">
-      <h3 class="footer_item_titl">Support</h3>
-      <ul class="footer_list">
-        <li class="li footer_list_item">Account</li>
-        <li class="li footer_list_item">Login / Register</li>
-        <li class="li footer_list_item">Cart</li>
-        <li class="li footer_list_item">Shop</li>
-      </ul>
-    </div>
-    <div class="footer_item">
-      <h3 class="footer_item_titl">Privacy</h3>
-      <ul class="footer_list">
-        <li class="li footer_list_item">Privacy policy</li>
-        <li class="li footer_list_item">Terms of use</li>
-        <li class="li footer_list_item">FAQ's</li>
-        <li class="li footer_list_item">Contact</li>
-      </ul>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script src="/pages/user/js/listPro.js"></script>
-<script src="/pages/user/js/renderPro.js"></script>
-<script src="/pages/user/js/catagories.js"></script>
-<script>
- // Function to add a product to the cart
- function addToCart(productId) {
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/pages/user/js/listPro.js"></script>
+  <script src="/pages/user/js/renderPro.js"></script>
+  <script src="/pages/user/js/catagories.js"></script>
+  <script>
+    
+   // Function to add a product to the cart
+   function addToCart(productId) {
     // Retrieve the existing cart from local storage or create an empty one if it doesn't exist
-    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Retrieve the product details
-    let product = getProductById(productId);
+    // Check if the product already exists in the cart
+    const existingProductIndex = cart.findIndex(item => item.masp === productId);
 
-    // Increment the quantity of the product in the cart, or set it to 1 if it's not already in the cart
-    cart[productId] = cart[productId] ? cart[productId] + 1 : 1;
-
-    // Add product details to cart
-    cart[productId] = {
-        masp: productId,
-        name: product.name,
-        img: product.img,
-        quantity: cart[productId]
-    };
-
-    // Save the updated cart back to local storage
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-
-// Function to add a product to the wishlist
-function addToWishlist(productId) {
-    // Retrieve the existing wishlist from local storage or create an empty one if it doesn't exist
-    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-    // Retrieve the product details
-    let product = getProductById(productId);
-
-    // Check if the product is already in the wishlist
-    const existingItem = wishlist.find(item => item.masp === productId);
-    if (!existingItem) {
-        // Add the product to the wishlist if it's not already there
-        wishlist.push({
+    if (existingProductIndex !== -1) {
+        // If the product already exists, increment its quantity
+        cart[existingProductIndex].quantity += 1;
+    } else {
+        // If the product does not exist, add it to the cart with a quantity of 1
+        const product = getProductById(productId);
+        cart.push({
             masp: productId,
             name: product.name,
             img: product.img,
+            price: product.price,
             quantity: 1
+        });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update the cart count on the navigation bar
+    const cartCount = document.getElementById('cart_count');
+    if (cartCount) {
+        // Get the total quantity of items in the cart
+        const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+        cartCount.textContent = totalCount;
+    }
+
+    // Redirect to cart.html when clicking on the cart icon
+    const cartIcon = document.getElementById('cart_icon');
+    if (cartIcon) {
+        cartIcon.addEventListener('click', () => {
+            window.location.href = 'cart.html';
+        });
+    }
+}
+
+    function addToWishlist(productId) {
+      // Retrieve the existing wishlist from local storage or create an empty one if it doesn't exist
+      let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+      // Retrieve the product details
+      let product = getProductById(productId);
+
+      // Check if the product is already in the wishlist
+      const existingItem = wishlist.find(item => item.masp === productId);
+      if (!existingItem) {
+        // Add the product to the wishlist if it's not already there
+        wishlist.push({
+          masp: productId,
+          name: product.name,
+          img: product.img,
+          quantity: 1
         });
 
         // Save the updated wishlist back to local storage
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
-    } else {
+      } else {
         // If the product is already in the wishlist, increment its quantity
         existingItem.quantity++;
         // Save the updated wishlist back to local storage
         localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      }
     }
-}
 
+    // Function to retrieve product details by ID
+    function getProductById(productId) {
+      // Retrieve the list of products from local storage or use a default list if it doesn't exist
+      let listProducts = getListProducts() || list_products;
 
+      // Find the product with the given ID
+      return listProducts.find(product => product.masp === productId);
+    }
 
+  </script>
 
-// Function to retrieve product details by ID
-function getProductById(productId) {
-    // Retrieve the list of products from local storage or use a default list if it doesn't exist
-    let listProducts = getListProducts() || list_products;
-
-    // Find the product with the given ID
-    return listProducts.find(product => product.masp === productId);
-}
-
-</script>
 </html>
