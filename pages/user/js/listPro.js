@@ -7,6 +7,7 @@ var list_products = [
         des: "Để tí thêm vào nha",
         quant: "0",
         category: "laptop",
+        type:"tieubieu"
     },
     {
         name: "MacBook Air 13 Inch M100 CEH",
@@ -58,9 +59,8 @@ var list_products = [
         img: "/pages/user/image/Bàn phím Demon Slayer.jpg",
         price: "2.959.000",
         masp: "M8",
-        des: "Để tí thêm vào nha",
-        quant: "27",
-        category: "keyboard",
+        des: "Keycap PBT Dye-Subbed / JDA profile được thiết kế theo nhân vật Kamado Nezuko trong bộ truyện manga nổi tiếng Demon Slayer Layout Fullsize phổ thông, dễ làm quen và phù hợp với đa số nhu cầu sử dụng 3 chế độ kết nối tùy chọn (Dây / Bluetooth 5.0 / Wireless 2.4Ghz) Sử dụng AKKO CS Switch – Crystal kết hợp cùng foam tiêu âm (Plate + Case) cho trải nghiệm gõ tối ưu và êm ái ",
+        quant: "27", 
     },
     {
         name: "Bàn phím AKKO ACR Pro Alice Plus",
@@ -103,12 +103,12 @@ var list_products = [
         img: "/pages/user/image/Chuột Không dây Gaming Razer Basilisk X HyperSpeed.webp",
         price: "1.990.000",
         masp: "M13",
-        des: "Để tí thêm vào nha",
+        des: "Razer Basilisk X Hyperspeed là mẫu chuột gaming không dây mới nhất đến từ Razer và là phiên bản nằm trong phân khúc giá rẻ hơn chiếc Razer Basilisk Ultimate với một số tính năng bị lược bỏ nhưng vẫn giữ được hiệu năng đảm bảo đáp ứng đầy đủ cho các tựa game thuộc thể loại FPS hay MMORPG và thậm chí là MOBA.",
         quant: "302",
         category: "mouse",
     },
     {
-        name: "Bàn phím cơ AKKO MOD007 PC Blue White Piano Switch",
+        name: "Bàn phím cơ AKKO MOD007 PC White Piano",
         img: "/pages/user/image/Bàn phím cơ MOD007 PC BLUE on White.webp",
         price: "1.790.000",
         masp: "M14",
@@ -152,6 +152,33 @@ var list_products = [
         quant: "13",
         category: "laptop",
     },
+    {
+        name: "Laptop Gaming ASUS Zephyrus GX650RX-LO156W",
+        img: "/pages/user/image/Laptop Gaming A565.webp",
+        price: "116.990.000",
+        masp: "M19",
+        des: "Để tí thêm vào nha",
+        quant: "4",
+        category: "laptop",
+    },
+    {
+        name: "Bàn Phím Cơ AKKO MOD007v3 HE Year Of Dragon",
+        img: "/pages/user/image/bàn phím Cơ AKKO MOD007v3.webp",
+        price: "4.390.000",
+        masp: "M20",
+        des: "Để tí thêm vào nha",
+        quant: "6",
+        category: "keyboard",
+    },
+    {
+        name: "Bàn phím AKKO 5108B Demon Slayer Kamado Nezuko",
+        img: "/pages/user/image/Bàn phím Demon Slayer.jpg",
+        price: "2.959.000",
+        masp: "M21",
+        des: "Để tí thêm vào nha",
+        quant: "17",
+        category: "keyboard",
+    },
 ];
 
 
@@ -164,4 +191,13 @@ localStorage.setItem('list_products', productListString);
 console.log('Danh sách sản phẩm đã được lưu vào localStorage.');
 
 
-
+function locTieuBieu(){
+    var listTieuBieu=[];
+    var tieuBieu=localStorage.getItem('list_products');
+    for(let i=0;i<=tieuBieu.length;i++){
+        if(tieuBieu[i].type=="tieubieu"){
+            listTieuBieu.push(tieuBieu[i]);
+        }
+    }
+    localStorage.setItem('listTieuBieu');
+}
