@@ -18,10 +18,10 @@
     <style>
         /* CSS for profile page */
         .profile-container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 2px solid #ccc;
             border-radius: 8px;
             background-color: #f9f9f9;
             margin-top: 40px;
@@ -154,6 +154,11 @@
             margin-right: 10px;
             /* Adjust this value to your preference */
         }
+
+        #showPassword {
+            margin-left: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -200,6 +205,8 @@
             <div class="user-info">
                 <p>Name: <span id="user-name"></span></p>
                 <p>Email: <span id="user-email"></span></p>
+                <p>Password: <span id="user-password">********</span> <i id="showPassword" class="fas fa-eye"
+                        onclick="togglePasswordVisibility()"></i></p>
                 <p>Date of Birth: <span id="user-dob"></span></p>
                 <p>Gender: <span id="user-gender"></span></p>
                 <p>Age: <span id="user-age"></span></p>
@@ -299,6 +306,21 @@
                 }
             }
         }
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('user-password');
+            var showPasswordIcon = document.getElementById('showPassword');
+
+            if (passwordField.textContent === '********') {
+                passwordField.textContent = currentUser.password; // Thay 'currentUser.password' bằng cách lấy mật khẩu từ local storage
+                showPasswordIcon.classList.remove('fa-eye');
+                showPasswordIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.textContent = '********';
+                showPasswordIcon.classList.remove('fa-eye-slash');
+                showPasswordIcon.classList.add('fa-eye');
+            }
+        }
+
 
     </script>
 </body>
