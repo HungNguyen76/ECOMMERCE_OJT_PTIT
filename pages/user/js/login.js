@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (equalUser(newUser, ad)) {
                 alert('Welcome back Admin!!');
                 localStorage.setItem('admin', true);
-                window.location.assign('admin.html');
+                window.location.assign('/pages/admin/products.html');
                 return false;
             }
         }
@@ -69,7 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 // Reload lại trang -> sau khi reload sẽ cập nhật luôn giỏ hàng khi hàm setupEventTaiKhoan chạy
                 // location.reload();
+<<<<<<< HEAD
                 window.location.href = '/pages/user/homepage.html';
+=======
+                window.location.href = '../homepage.html';
+>>>>>>> 423f5d7917c5bd2e653207ebced07d9da5b58a73
                 return false;
             }
         }
@@ -89,7 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const userInfo = { email: existingAccount.email, name: existingAccount.name };
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
             
+<<<<<<< HEAD
             window.location.href = '/pages/user/homepage.html';
+=======
+            window.location.href = '../homepage.html';
+>>>>>>> 423f5d7917c5bd2e653207ebced07d9da5b58a73
         } else {
             // Nếu tài khoản không tồn tại, hiển thị thông báo lỗi
             alert('Tài khoản không tồn tại. Vui lòng tạo tài khoản!');
