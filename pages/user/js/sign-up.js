@@ -50,6 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Tạo tài khoản thành công!');
 
         // Chuyển hướng người dùng đến trang đăng nhập
-        window.location.href = '../login.html';
+        window.location.href = '/pages/user/login.html';
     });
 });

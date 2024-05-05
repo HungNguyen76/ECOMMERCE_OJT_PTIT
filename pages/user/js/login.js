@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 // Reload lại trang -> sau khi reload sẽ cập nhật luôn giỏ hàng khi hàm setupEventTaiKhoan chạy
                 // location.reload();
-                window.location.href = '../index.html';
+                window.location.href = '/pages/user/homepage.html';
                 return false;
             }
         }
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const userInfo = { email: existingAccount.email, name: existingAccount.name };
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
             
-            window.location.href = '../index.html';
+            window.location.href = '/pages/user/homepage.html';
         } else {
             // Nếu tài khoản không tồn tại, hiển thị thông báo lỗi
             alert('Tài khoản không tồn tại. Vui lòng tạo tài khoản!');
