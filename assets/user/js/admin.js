@@ -414,7 +414,7 @@ function addKhungSuaSanPham(masp) {
         </tr>
         <tr>
           <td>Price:</td>
-          <td><input type="text" value="${sp.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}"></td>
+          <td><input type="text" value="${+sp.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}"></td>
         </tr>
         <tr>
           <td colspan="2" class="table-footer">
@@ -671,8 +671,10 @@ function getValueOfTypeInTable_Order(tr, loai) {
 var adminInfo = [{
     "email": "admin@gmail.com",
     "password": "123456",
-    "role": "admin"
+    "role": "Admin",
+    "name": "ADMIN",
 }];
+
 var adminInfoString = JSON.stringify(adminInfo);
 
 localStorage.setItem('adminLists', adminInfoString);
@@ -738,39 +740,57 @@ localStorage.setItem('adminLists', adminInfoString);
 
 // Draw table
 function addTableKhachHang() {
-    var tc = document.getElementsByClassName('khachhang')[0].getElementsByClassName('table-content')[0];   
+    var tc = document.getElementsByClassName('khachhang')[0].getElementsByClassName('table-content')[0];
     var s = `<table class="table-outline hideImg">`;
-
+  
+    // Hiển thị danh sách người dùng (ListUser)
     let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
-
     for (var i = 0; i < listUser.length; i++) {
-        var u = listUser[i];
-        s += `<tr>
-            <td style="width: 5%">` + (i + 1) + `</td>
-            <td style="width: 9%">` + u.role + `</td>
-            <td style="width: 20%">` + u.email + `</td>
-            <td style="width: 20%">` + u.name + `</td>
-            <td style="width: 10%">` + u.password + `</td>
-            <td style="width: 10%">
-                <div class="tooltip">
-                    <label class="switch">
-                        <input type="checkbox" `+ (u.off ? '' : 'checked') + ` onclick="voHieuHoaUser(this, '` + u.name + `')">
-                        <span class="slider round"></span>
-                    </label>
-                    <span class="tooltiptext">`+ (u.off ? 'Unlock' : 'Lock') + `</span>
-                </div>
-                <div class="tooltip">
-                    <i class="fa fa-remove" onclick="deleteUser('`+ u.name + `')"></i>
-                    <span class="tooltiptext">Delete</span>
-                </div>
-            </td>
-        </tr>`;
+      var u = listUser[i];
+      s += `<tr>
+        <td style="width: 5%">${i + 1}</td>
+        <td style="width: 9%">${u.role}</td>
+        <td style="width: 20%">${u.email}</td>
+        <td style="width: 20%">${u.name}</td>
+        <td style="width: 10%">${u.password}</td>
+        <td style="width: 10%">
+          <div class="tooltip">
+            <label class="switch">
+              <input type="checkbox" ${u.off ? '' : 'checked'} onclick="voHieuHoaUser(this, '${u.name}')">
+              <span class="slider round"></span>
+            </label>
+            <span class="tooltiptext">${u.off ? 'Unlock' : 'Lock'}</span>
+          </div>
+          <div class="tooltip">
+            <i class="fa fa-remove" onclick="deleteUser('${u.name}')"></i>
+            <span class="tooltiptext">Delete</span>
+          </div>
+        </td>
+      </tr>`;
     }
-
+  
+    // Hiển thị danh sách quản trị viên (adminLists)
+    let adminLists = JSON.parse(localStorage.getItem('adminLists')) || [];
+    for (var i = 0; i < adminLists.length; i++) {
+      var u = adminLists[i];
+      s += `<tr>
+        <td style="width: 5%">${listUser.length + i + 1}</td>
+        <td style="width: 9%">${u.role}</td>
+        <td style="width: 20%">${u.email}</td>
+        <td style="width: 20%">${u.name}</td>
+        <td style="width: 10%">${u.password}</td>
+        <td style="width: 10%">
+          <div class="tooltip">
+            <i class="fa fa-remove" onclick="deleteUser('${u.name}')"></i>
+            <span class="tooltiptext">Delete</span>
+          </div>
+        </td>
+      </tr>`;
+    }
+  
     s += `</table>`;
     tc.innerHTML = s;
-}
-// addTableKhachHang()
+  }
 
 // Search
 function timKiemUser(inp) {
@@ -828,94 +848,99 @@ function validateEmail(email) {
 
 // Hàm mở modal
 function openThemUser() {
+    // Tạo modal nếu chưa tồn tại
     var modal = document.getElementById('userModal');
     if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'userModal';
-        modal.className = 'modal';
-        document.body.appendChild(modal);
+      modal = document.createElement('div');
+      modal.id = 'userModal';
+      modal.className = 'modal';
+      document.body.appendChild(modal);
     }
-
+  
+    // Nội dung HTML của modal
     var modalContent = `
-        <div class="modal-content">
-            <h2 class="type">Register</h2>
-            <form id="userForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
-                    <option value="">Select a role</option>
-                    <option value="Admin">Admin</option>
-                    <option value="User">User</option>
-                </select>
-
-                <button type="submit">Tạo tài khoản</button>
-                <button type="button" id="cancelBtn">Hủy</button>
-
-            </form>
-        </div>
+      <div class="modal-content">
+        <h2 class="type">Register</h2>
+        <form id="userForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <label for="role">Role:</label>
+          <select id="role" name="role" required>
+            <option value="">Select a role</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+          </select>
+          <button type="submit">Tạo tài khoản</button>
+          <button type="button" id="cancelBtn">Hủy</button>
+        </form>
+      </div>
     `;
+  
+    // Gán nội dung HTML vào modal và hiển thị modal
     modal.innerHTML = modalContent;
     modal.style.display = 'block';
-
+  
+    // Xử lý sự kiện submit form
     var form = document.getElementById('userForm');
-    if (!form) {
-        alert('Không tìm thấy form');
-        return;
-    }
-    form.addEventListener('submit', function(event) {
+    if (form) {
+      form.addEventListener('submit', function(event) {
         event.preventDefault();
-
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var role = document.getElementById('role').value;
-
+  
+        // Validate email
         if (!validateEmail(email)) {
-            return;
+          alert('Email không hợp lệ');
+          return;
         }
-
+  
+        // Tạo id mới
         var id = generateId(8);
-
+  
+        // Tạo đối tượng user mới
         var newUser = {
-            id: id,
-            name: name,
-            email: email,
-            password: password,
-            role: role,
-            off: false
+          id: id,
+          name: name,
+          email: email,
+          password: password,
+          role: role,
+          off: false
         };
-
+  
+        // Lưu user vào localStorage
         if (role.toLowerCase() === 'admin') {
-            let adminLists = JSON.parse(localStorage.getItem('adminLists')) || [];
-            adminLists.push(newUser);
-            localStorage.setItem('adminLists', JSON.stringify(adminLists));
-
-            // Cập nhật giao diện hiển thị danh sách tài khoản admin
-            displayAdminList(adminLists);
+          let adminLists = JSON.parse(localStorage.getItem('adminLists')) || [];
+          adminLists.push(newUser);
+          localStorage.setItem('adminLists', JSON.stringify(adminLists));
+        //   displayAdminList(adminLists); // Cập nhật giao diện hiển thị danh sách tài khoản admin
         } else if (role.toLowerCase() === 'user') {
-            let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
-            listUser.push(newUser);
-            localStorage.setItem('ListUser', JSON.stringify(listUser));
+          let listUser = JSON.parse(localStorage.getItem('ListUser')) || [];
+          listUser.push(newUser);
+          localStorage.setItem('ListUser', JSON.stringify(listUser));
         }
-
+  
+        // Ẩn modal và cập nhật giao diện
         modal.style.display = 'none';
         addTableKhachHang();
-    });
-
+      });
+    } else {
+      alert('Không tìm thấy form');
+    }
+  
+    // Xử lý sự kiện click nút "Hủy"
     var cancelBtn = document.getElementById('cancelBtn');
-    cancelBtn.addEventListener('click', function() {
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', function() {
         modal.style.display = 'none';
-    });
-}
-
+      });
+    }
+  }
 // Disable user
 function voHieuHoaUser(inp, account) {
     var listUser = getListUser();
