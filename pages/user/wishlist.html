@@ -40,6 +40,48 @@
             font-size: 14px;
             color: #777;
         }
+    /* CSS styles for wishlist items */
+    .wishlist-item {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .wishlist-item img {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+
+    .wishlist-item p {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .wishlist-item span {
+        font-size: 14px;
+        color: #777;
+    }
+
+    /* CSS cho nút Remove */
+    .wishlist-item button {
+        background-color: black; /* Màu nền */
+        color: #fff; /* Màu chữ */
+        border: none; /* Không có viền */
+        padding: 6px 10px; /* Kích thước padding */
+        border-radius: 4px; /* Độ cong viền */
+        cursor: pointer; /* Con trỏ thành pointer khi di chuột */
+        transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+    }
+
+    /* Hover effect */
+    .wishlist-item button:hover {
+        background-color: white;
+        color: black /* Màu nền khi di chuột qua */
+    }
     </style>
 </head>
 
@@ -132,23 +174,47 @@
 
 
     <script>
-        // Retrieve wishlist from localStorage
-        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        function removeFromWishlist(index) {
+            // Retrieve wishlist from localStorage
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            
+            // Remove item at the specified index
+            wishlist.splice(index, 1);
+            
+            // Update localStorage with the new wishlist
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            
+            // Refresh the wishlist display
+            displayWishlist();
+        }
 
-        // Display wishlist items
-        const wishlistContainer = document.getElementById('wishlist-container');
-        wishlist.forEach(item => {
-            const wishlistItem = document.createElement('div');
-            wishlistItem.classList.add('wishlist-item');
-            wishlistItem.innerHTML = `
-                <img src="${item.img}" alt="${item.name}">
-                <div>
-                    <p>${item.name}</p>
-                    <span>Quantity: ${item.quantity}</span>
-                </div>
-            `;
-            wishlistContainer.appendChild(wishlistItem);
-        });
+        // Function to display wishlist items
+        function displayWishlist() {
+            const wishlistContainer = document.getElementById('wishlist-container');
+            wishlistContainer.innerHTML = ''; // Clear previous content
+            
+            // Retrieve wishlist from localStorage
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Display wishlist items
+            wishlist.forEach((item, index) => {
+                const wishlistItem = document.createElement('div');
+                wishlistItem.classList.add('wishlist-item');
+                wishlistItem.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div>
+                        <p>${item.name}</p>
+                        <span>Quantity: ${item.quantity}</span>
+                        <button onclick="removeFromWishlist(${index})">Delete</button>
+                    </div>
+                `;
+                wishlistContainer.appendChild(wishlistItem);
+            });
+        }
+
+        // Initial display of the wishlist
+        displayWishlist();
+        
     </script>
 </body>
 

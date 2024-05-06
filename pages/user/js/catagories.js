@@ -58,8 +58,11 @@ function sortProductsByPrice(order) {
     const priceB = parseFloat(b.price.replace(/[^0-9]+/g, "").replace('.', ''));
     return order === 'ascending' ? priceA - priceB : priceB - priceA;
   });
+  // b1 lấy 10 sản phẩm đầu tiên trong sortedProducts lưu ra một mảng mới
+  // 1.1 khai bao một mảng mới chứa 10  phần tử của mảng sortProduct
+  // 1.2 sử dụng vòng lặp chạy từ 1 đến 10 trong mảng sortProduct lưu vào mảng mới
+  // b2 truyền mảng mới sang function displayProducts hiển thị
   displayProducts(sortedProducts);
 }
-
 // Gọi hàm sắp xếp và hiển thị sản phẩm theo giá tăng dần
 sortProductsByPrice('ascending');

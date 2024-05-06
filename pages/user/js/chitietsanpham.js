@@ -88,10 +88,13 @@ function loadCommentsFromLocalStorage() {
     const commentElement = document.createElement('div');
     commentElement.classList.add('comment-item');
     commentElement.innerHTML = `
-      <p><strong>User:</strong> ${comment}</p>
-      <button class="delete-btn" data-index="${index}">Delete</button>
-      <button class="edit-btn" data-index="${index}">Edit</button>
-    `;
+  <p><strong>User:</strong> ${comment}</p>
+  <div class="comment-buttons">
+    <button class="delete-btn" data-index="${index}">Delete</button>
+    <button class="edit-btn" data-index="${index}">Edit</button>
+  </div>
+  <hr> <!-- Thêm đường kẻ ngang giữa các bình luận -->
+`;
     commentContainer.appendChild(commentElement);
   });
 
